@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hero + Book-a-Demo Drawer · ExtraaEdge section</title>
+    <meta name="title" content="ExtraaEdge - AI-Powered Admissions Growth Platform">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preconnect"   href="https://fonts.googleapis.com">
+    <link rel="preconnect"   href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://www.clarity.ms">
+    <link rel="dns-prefetch" href="https://www.youtube.com">
+    <link rel="dns-prefetch" href="https://unpkg.com">
+    <link rel="dns-prefetch" href="https://eeconfigstaticfiles.blob.core.windows.net">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
+    <script defer src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- shared stylesheet: every <style> block of the original page, in order -->
+    <link rel="stylesheet" href="../assets/global.css">
+</head>
+<body>
+<!-- ══════════════════════════════════════════════════════════════════════════
+     SECTION 03 · Hero + Book-a-Demo Drawer
+     Extracted verbatim from ExtraaEdgeHomepageWithVideoAndOldHeader.html
+     (source lines 2272-2297, 2395-2483, 2484-2516, 2517-2809)
+     Open this file with VS Code "Live Server" (or any static server) to run
+     this section on its own.
+     ══════════════════════════════════════════════════════════════════════════ -->
+<main id="main-content">
+<div class="ee-home">
+<!-- ===================== HERO (WebGL) ===================== -->
+
+<!-- ===================== HERO - brand edition (scoped #xhero) ===================== -->
+
+<section id="xhero" aria-label="ExtraaEdge AI-Powered Admission CRM">
+  <canvas id="glsl" aria-hidden="true"></canvas>
+  <div class="hero__veil" aria-hidden="true"></div>
+  <div class="hero__grid" aria-hidden="true"></div>
+  <div class="container hero__in">
+    <div>
+      <style>#xhero .hero__rot{font-size:clamp(25px,3.4vw,46px)!important;line-height:1.12;letter-spacing:-.03em;min-height:clamp(118px,16vh,200px);min-height:max(clamp(118px,16vh,200px),4.6em);transition:opacity .55s cubic-bezier(.25,.6,.25,1),transform .55s cubic-bezier(.25,.6,.25,1);will-change:opacity,transform}#xhero .hero__rot.is-out{opacity:0!important;transform:translateY(10px)!important}#xhero .hero-caret{display:none;width:3px;height:.92em;margin-left:4px;border-radius:2px;background:var(--orange);vertical-align:-1px;animation:heroCaretBlink 1s steps(1) infinite}
+        /* reserve space for the tallest rotating headline per width - text swaps must never push the layout (CLS) */
+        @media(max-width:390px){#xhero .hero__rot{min-height:4.7em!important}}
+        @keyframes heroCaretBlink{50%{opacity:0}}
+        @media(prefers-reduced-motion:reduce){#xhero .hero-caret{display:none}}#xhero .hero__rot .accent{background:linear-gradient(100deg,var(--orange),#22467c);-webkit-background-clip:text;background-clip:text;color:transparent}
+        @media(prefers-reduced-motion:reduce){#xhero .hero__rot{transition:none}}
+        /* phones: the conversion-lift stat is the money number - paint it first */
+        @media(max-width:640px){#xhero .stats .stat:nth-child(3){order:-1}}
+      </style>
+      <h1 class="reveal d2 hero__rot" id="heroRot" aria-live="polite">Convert More Enquiries Into Admissions With <span class="accent">India&rsquo;s Intelligent Admissions Growth Platform</span></h1>
+      <p class="sub reveal d3">Built for education, driven by AI simplicity: <b>VidyaGPT, VidyaPulse and VidyaAgents call, qualify and follow up with every enquiry in 60 seconds</b>, so your counsellors only talk to students who are ready to enrol.</p>
+      <div class="chips reveal d4">
+        <span class="chip"><i>&#9889;</i> Go live in 7 days</span>
+        <span class="chip"><i>&#128279;</i> Works with your existing forms &amp; portals</span>
+        <span class="chip"><i>&#128737;</i> ISO 27001 &middot; GDPR-ready</span>
+      </div>
+      <div class="hero__cta reveal d5">
+        <a href="#admission-form" class="btn btn-primary" id="magnet">Book a Free Demo <span class="arr">&rarr;</span><span class="shine"></span></a>
+        <a href="#ee-platform" class="btn btn-watch" data-eep-full><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:15px;height:15px;flex:none"><path d="M8 5v14l11-7z"/></svg> Explore the Platform Yourself</a>
+        <span class="cta-note">No credit card &middot; Personalised to your institution</span>
+      </div>
+      <div class="stats reveal d6">
+        <div class="stat"><div class="stat__n"><span data-xhcount="500">0</span><em>+</em></div><div class="stat__l">Institutions onboard</div></div>
+        <div class="stat"><div class="stat__n"><span data-xhcount="10">0</span><em>M+</em></div><div class="stat__l">Enquiries managed</div></div>
+        <div class="stat"><div class="stat__n"><span data-xhcount="40">0</span><em>%</em></div><div class="stat__l">Conversion lift (up to)</div></div>
+        <div class="stat"><div class="stat__n"><span data-xhcount="60">0</span><em>s</em></div><div class="stat__l">Avg. first response</div></div>
+      </div>
+    </div>
+    <style>/* Exact same demo-form card as the product page (single-product.php) */
+      #xhero .hero-form-aside{width:100%}#xhero .hero-form-card{position:relative;background:#fff;border:1px solid #EDF0F5;border-radius:26px;padding:clamp(26px,3vw,42px);box-shadow:0 30px 70px -20px rgba(25,52,93,.26)}#xhero .hero-form-card::after{content:'';position:absolute;inset:-1px;border-radius:inherit;padding:1px;pointer-events:none;background:linear-gradient(140deg,rgba(222,110,48,.5),transparent 40%,transparent 60%,rgba(25,52,93,.4));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:.55}#xhero .hero-form-card::before{content:"Book a Demo";position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#E8843F 0%,#DE6E30 55%,#C2541C 100%);color:#fff;padding:7px 20px;border-radius:999px;font-weight:700;font-size:11px;letter-spacing:.04em;white-space:nowrap;box-shadow:0 18px 44px -14px rgba(222,110,48,.55)}#xhero .secure-label{text-align:center;margin-top:18px;font-size:10.5px;color:rgba(25,52,93,.5);font-weight:600;letter-spacing:.08em;text-transform:uppercase}/* ── EE form-7 widget: FORCE clean single-column layout (overrides global page CSS + widget internals) ── */
+      #ee-form-7,#ee-form-7 *{box-sizing:border-box!important}#ee-form-7 form{display:block!important;width:100%!important}#ee-form-7 form>div,#ee-form-7 form>div>div{display:block!important;width:100%!important;max-width:100%!important;float:none!important;grid-template-columns:1fr!important;margin-bottom:12px!important}#ee-form-7 h1,#ee-form-7 h2,#ee-form-7 h3,#ee-form-7 h4{line-height:1.2!important;margin:0 0 4px!important;text-align:center!important}#ee-form-7 p{line-height:1.45!important;margin:0 0 14px!important}#ee-form-7 label{display:block!important;float:none!important;width:auto!important;max-width:100%!important;text-align:left!important;color:#19345d!important;font-weight:600!important;font-size:13px!important;margin:0 0 6px!important}#ee-form-7 input[type="text"],#ee-form-7 input[type="email"],#ee-form-7 input[type="tel"],#ee-form-7 input[type="url"],#ee-form-7 input[type="number"],#ee-form-7 select,#ee-form-7 textarea{display:block!important;float:none!important;background-color:#fff!important;color:#19345d!important;border:1px solid #e2e8f0!important;border-radius:10px!important;padding:12px 14px!important;font-size:14px!important;font-family:'Inter',sans-serif!important;width:100%!important;max-width:100%!important;box-shadow:none!important;transition:border-color .2s,box-shadow .2s!important}#ee-form-7 input:focus,#ee-form-7 select:focus,#ee-form-7 textarea:focus{outline:none!important;border-color:#DE6E30!important;box-shadow:0 0 0 3px rgba(222,110,48,.12)!important}#ee-form-7 input::placeholder,#ee-form-7 textarea::placeholder{color:var(--text-muted,#5A6B85)!important;opacity:1!important}#ee-form-7 input[type="submit"],#ee-form-7 button[type="submit"]{display:block!important;background-color:var(--orange-700,#B5551D)!important;color:#fff!important;border:none!important;border-radius:12px!important;padding:14px 28px!important;font-size:15px!important;font-weight:700!important;font-family:'Inter',sans-serif!important;width:100%!important;cursor:pointer!important;transition:all .3s!important;box-shadow:0 8px 20px rgba(222,110,48,.25)!important}#ee-form-7 input[type="submit"]:hover,#ee-form-7 button[type="submit"]:hover{background-color:var(--orange-800,#A8501C)!important;transform:translateY(-2px)!important;box-shadow:0 12px 28px rgba(222,110,48,.35)!important}/* phone field (intl-tel-input) - restored AFTER the block resets so the +91 flag sits correctly */
+      /* consent checkbox row - keep the box and its text on one tidy line (mobile friendly) */
+      #ee-form-7 input[type="checkbox"]{display:inline-block!important;float:none!important;width:15px!important;height:15px!important;min-width:15px!important;max-width:15px!important;flex:0 0 auto!important;margin:2px 8px 0 0!important;padding:0!important;accent-color:#DE6E30!important;vertical-align:top!important;box-shadow:none!important}
+      #ee-form-7 label:has(input[type="checkbox"]),#ee-form-7 div:has(>input[type="checkbox"]),#ee-form-7 p:has(>input[type="checkbox"]){display:flex!important;flex-direction:row!important;align-items:flex-start!important;gap:8px!important;width:100%!important;max-width:100%!important;margin:2px 0 12px!important;font-size:12px!important;font-weight:500!important;line-height:1.55!important;color:#5B6B84!important;text-align:left!important;text-transform:none!important;letter-spacing:0!important}
+      #ee-form-7 label:has(input[type="checkbox"]) span,#ee-form-7 label:has(input[type="checkbox"]) p,#ee-form-7 div:has(>input[type="checkbox"]) label,#ee-form-7 div:has(>input[type="checkbox"]) span,#ee-form-7 div:has(>input[type="checkbox"]) p{display:inline!important;float:none!important;width:auto!important;max-width:100%!important;margin:0!important;font-size:12px!important;font-weight:500!important;line-height:1.55!important;color:#5B6B84!important;text-align:left!important}
+      #ee-form-7 label:has(input[type="checkbox"]) a,#ee-form-7 div:has(>input[type="checkbox"]) a{color:var(--orange-700,#B5551D)!important;text-decoration:underline!important;font-weight:600!important}
+      #ee-form-7 .iti,#ee-form-7 .iti__country-list{background-color:#fff!important;color:#19345d!important}#ee-form-7 .iti{position:relative!important;display:block!important;width:100%!important}#ee-form-7 .iti input[type="tel"]{padding-left:96px!important;width:100%!important}#ee-form-7 .iti__flag-container{position:absolute!important;top:0;bottom:0;left:0;z-index:2;display:flex!important;align-items:center}#ee-form-7 .iti__selected-flag{height:100%!important;padding:0 8px 0 14px!important;background:transparent!important;border-right:1px solid rgba(25,52,93,.10)!important;display:flex!important;align-items:center;gap:6px}#ee-form-7 .iti__selected-dial-code{color:#19345d!important;font-weight:700;font-size:.95rem}#ee-form-7 .iti__country-list{position:absolute!important;z-index:5!important}#ee-form-7 .iti__arrow{margin-left:4px!important}
+      @media(max-width:1024px){#xhero .hero-form-aside{max-width:540px;margin:0 auto}}
+      @media(max-width:480px){#xhero .hero-form-card{padding:24px 20px}}
+    </style>
+    <style>/* ── Product Overview panel — sits where the demo form used to ── */
+      #xhero .hero-pov{width:100%;position:relative;text-align:center}
+      /* soft ambient glow so the frame sits IN the page, not on a card */
+      #xhero .hero-pov::before{content:'';position:absolute;left:50%;top:54%;transform:translate(-50%,-50%);width:118%;height:82%;pointer-events:none;z-index:0;background:radial-gradient(48% 42% at 32% 38%,rgba(222,110,48,.16),transparent 70%),radial-gradient(52% 46% at 72% 62%,rgba(25,52,93,.14),transparent 72%);filter:blur(34px)}
+      #xhero .hero-pov>*{position:relative;z-index:1}
+      #xhero .hp-chip{display:inline-flex;background:linear-gradient(135deg,#E8843F 0%,#DE6E30 55%,#C2541C 100%);color:#fff;font:800 11px/1 'Inter',sans-serif;letter-spacing:.1em;text-transform:uppercase;padding:8px 18px;border-radius:999px;box-shadow:0 18px 44px -14px rgba(222,110,48,.55);margin-bottom:10px}
+      /* same id/class/type counts as the site heading-scale rule; prints later, wins the tie */
+      html body #main-content #xhero h2.h2.hp-h2{margin:0 0 8px !important;color:#19335D !important;font-weight:800 !important;text-align:center !important}
+      #xhero .hp-sub{max-width:48ch;margin:0 auto 12px;color:#5a6b85;font-size:13.5px;line-height:1.6}
+      #xhero .hp-vid{position:relative;border-radius:20px;overflow:hidden;cursor:pointer;background:#0F2040;aspect-ratio:16/9;border:1px solid rgba(255,255,255,.65);outline:1px solid rgba(25,52,93,.12);box-shadow:0 60px 120px -36px rgba(15,32,64,.55),0 24px 48px -24px rgba(15,32,64,.35),0 2px 8px rgba(15,32,64,.12)}
+      #xhero .hp-vid img{width:100%;height:100%;object-fit:cover;display:block}
+      #xhero .hp-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:72px;height:72px;border-radius:50%;background:rgba(255,255,255,.94);backdrop-filter:blur(4px);display:grid;place-items:center;box-shadow:0 18px 44px rgba(15,32,64,.45),0 0 0 10px rgba(255,255,255,.18);transition:transform .2s ease,box-shadow .2s ease}
+      #xhero .hp-play svg{width:22px;height:22px;margin-left:3px;color:#DE6E30}
+      #xhero .hp-vid:hover .hp-play{transform:translate(-50%,-50%) scale(1.08);box-shadow:0 22px 52px rgba(15,32,64,.5),0 0 0 14px rgba(255,255,255,.22)}
+      #xhero .hp-vid:focus-visible{outline:3px solid #19335D;outline-offset:3px}
+      #xhero .hp-vid.playing{cursor:default}
+      #xhero .hp-vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+      #xhero .hp-trio{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:18px}
+      #xhero .hp-t{display:flex;align-items:center;justify-content:center;gap:8px;text-align:left}
+      #xhero .hp-t svg{width:22px;height:22px;flex:none;color:var(--orange-700,#B5551D)}
+      #xhero .hp-t b{display:block;font:700 12px/1.3 'Inter',sans-serif;color:#19335D}
+      #xhero .hp-t small{display:block;font:600 10.5px/1.3 'Inter',sans-serif;color:#7a889e}
+      @media(max-width:1024px){#xhero .hero-pov{max-width:540px;margin:0 auto}}
+      @media(max-width:480px){#xhero .hp-vid{border-radius:14px}/* the trio stays on one line - three tight columns, smaller marks */#xhero .hp-trio{grid-template-columns:repeat(3,1fr);gap:6px;margin-top:14px;padding-top:12px}#xhero .hp-t{justify-content:center;gap:5px}#xhero .hp-t svg{width:16px;height:16px}#xhero .hp-t b{font-size:10px;white-space:nowrap}#xhero .hp-t small{font-size:9px;white-space:nowrap}}
+      @media(prefers-reduced-motion:reduce){#xhero .hp-play{transition:none}}
+    </style>
+    <aside class="hero-pov reveal d4" aria-label="Product overview">
+      <h2 class="h2 hp-h2">See ExtraaEdge in Action<span class="ee-h2b">2-Minute Product Overview</span></h2>
+      <p class="hp-sub">How our Intelligent Admissions Growth Platform helps you attract, engage and enrol more students.</p>
+      <div class="hp-vid" id="hpVid" data-yt="cCa7ZOJi694" role="button" tabindex="0" aria-label="Play the ExtraaEdge product overview video">
+        <img src="https://www.extraaedge.com/wp-content/uploads/2026/home-page/hero-thubnail.png" alt="ExtraaEdge product overview" loading="lazy" decoding="async" width="1280" height="720"
+             onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/cCa7ZOJi694/maxresdefault.jpg';">
+        <span class="hp-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+      </div>
+      <div class="hp-trio">
+        <div class="hp-t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 9l-10-4-10 4 10 4 10-4v6"/><path d="M6 10.6V16a6 3 0 0 0 12 0v-5.4"/></svg><span><b>Built for</b><small>Education</small></span></div>
+        <div class="hp-t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3z"/><path d="M18.5 15.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7.7-1.8z"/></svg><span><b>AI-Powered</b><small>Automation</small></span></div>
+        <div class="hp-t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><path d="M21 21v-2a4 4 0 0 0-3-3.85"/></svg><span><b>Trusted by</b><small>500+ Institutions</small></span></div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ── Book-a-Demo drawer — the hero form lives here now; every link to
+     #admission-form on this page slides it open ── -->
+
+<div class="eedd-backdrop" id="eeddBack" aria-hidden="true"></div>
+
+<aside class="ee-demo-drawer" id="admission-form" role="dialog" aria-modal="true" aria-label="Book a demo">
+  <div class="eedd-head">
+    <span><b>Book a Demo</b><small>Personalised to your institution &middot; No credit card</small></span>
+    <button type="button" class="eedd-x" id="eeddClose" aria-label="Close">&#10005;</button>
+  </div>
+  <div class="eedd-body">
+    <script async src="https://eeconfigstaticfiles.blob.core.windows.net/staticfiles/growth/ee-form-widget/form-7/widget.js"></script>
+    <p class="eedd-ctx" id="eeddCtx" hidden></p>
+    <div id="ee-form-7"></div>
+    <p class="secure-label">&#128274; Secure Data Transmission Active &middot; ISO 27001 Certified &middot; GDPR Compliant</p>
+    <style>.ee-demo-drawer .eedd-ctx{margin:0 0 10px;font:600 12.5px/1.5 'Inter',system-ui,sans-serif;color:#19335D;background:rgba(222,110,48,.08);border:1px solid rgba(222,110,48,.22);border-radius:10px;padding:10px 14px}</style>
+  </div>
+</aside>
+
+<script>
+(function(){
+  /* Product overview video — nothing loads from YouTube until it is asked for */
+  var v=document.getElementById('hpVid');
+  if(v){
+    var play=function(){
+      if(v.classList.contains('playing')) return;
+      v.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+v.getAttribute('data-yt')+'?autoplay=1&rel=0&modestbranding=1" title="ExtraaEdge product overview" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+      v.classList.add('playing'); v.removeAttribute('role'); v.removeAttribute('tabindex');
+    };
+    v.addEventListener('click',play);
+    v.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); play(); } });
+  }
+
+  /* Drawer. Every #admission-form link on the page slides it open, so the
+     hero button, the Vidya cards and the Solutions bento all land here. */
+  var dr=document.getElementById('admission-form'),
+      back=document.getElementById('eeddBack'),
+      x=document.getElementById('eeddClose'),
+      last=null;
+  if(!dr||!back||!x) return;
+  function openD(from){
+    last=from||null;
+    dr.classList.add('open'); back.classList.add('open');
+    document.body.style.overflow='hidden';
+    document.body.classList.add('eedd-on');
+    x.focus();
+  }
+  function closeD(){
+    dr.classList.remove('open'); back.classList.remove('open');
+    document.body.style.overflow='';
+    document.body.classList.remove('eedd-on');
+    if(last&&last.focus) last.focus();
+  }
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('a[href$="#admission-form"]');
+    if(!a) return;
+    e.preventDefault();
+    /* ROI-qualified open: carry the calculator inputs into the drawer and the
+       page URL, so the demo request arrives with funnel context attached */
+    var ctx=document.getElementById('eeddCtx');
+    if(ctx){
+      var inRoi=!!a.closest('#ee-cro'), i1=document.getElementById('ri1'), i2=document.getElementById('ri2'), i3=document.getElementById('ri3');
+      if(inRoi&&i1&&i2&&i3){
+        var fee=+i3.value, feeTxt=fee>=100000?('\u20B9'+(fee/100000).toFixed(1)+'L'):('\u20B9'+Math.round(fee/1000)+'K');
+        ctx.textContent='Your ROI inputs: '+(+i1.value).toLocaleString('en-IN')+' enquiries/mo \u00B7 '+i2.value+'% conversion \u00B7 '+feeTxt+' avg fee \u2014 we\u2019ll bring your projection to the demo.';
+        ctx.hidden=false;
+        try{ history.replaceState(null,'',location.pathname+'?roi_enq='+i1.value+'&roi_conv='+i2.value+'&roi_fee='+i3.value+'#admission-form'); }catch(_){ }
+      } else { ctx.hidden=true; }
+    }
+    openD(a);
+  });
+  x.addEventListener('click',closeD);
+  back.addEventListener('click',closeD);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&dr.classList.contains('open')) closeD(); });
+})();
+</script>
+
+<script>
+/* hero rotating headlines - typewriter (text-telling) */
+(function(){
+  var DATA=[
+    {pre:'Convert More Enquiries Into Admissions With ', acc:'India\u2019s Intelligent Admissions Growth Platform'},
+    {pre:'Capture And Convert Student Leads 24/7 With ',          acc:'AI-Powered Education Chatbot'},
+    {pre:'Engage Every Prospect Instantly With ',                 acc:'AI-Powered WhatsApp Admissions'},
+    {pre:'Automate Student Recruitment Campaigns With ',          acc:'AI-Powered Marketing Automation'}
+  ];
+  var el=document.getElementById('heroRot'); if(!el) return;
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  /* typing runs everywhere - many phones ship with OS-level animation
+     reduction that used to freeze this headline on the first phrase */
+
+  /* Every word is laid out in its FINAL position from the first frame and
+     only fades in - a half-typed word can never wrap to the next line and
+     jump back up the way character-by-character typing reflowed the text.
+     The finished line holds, fades out as a whole (the .is-out crossfade),
+     and the next phrase reveals the same way. */
+  /* The stylesheet's .accent paints a gradient via background-clip:text.
+     That background belongs to the PARENT span, so it showed through the
+     glyph shapes even while the characters sat at opacity 0 - the keywords
+     looked pre-highlighted. The rebuilt headline therefore carries NO
+     stylesheet class at all: both halves are bare spans and every keyword
+     character is coloured brand orange inline, so no cached, minified or
+     optimizer-mangled CSS can ever paint anything before its turn. */
+  var pre=document.createElement('span');
+  var acc=document.createElement('span');
+  el.textContent=''; el.appendChild(pre); el.appendChild(acc);
+
+  var i=0,t=null,paused=false;
+  var STAG=22, HOLD=3200, FADE=620, GAP=260, START_HOLD=3400;
+  function buildWords(target,text){
+    /* each word is an atomic inline-block (so it wraps as a unit and can
+       never hop lines mid-reveal); the characters inside it fade in one by
+       one, which is what reads as the text being written. Every style rides
+       the element INLINE - CSS optimizers (LiteSpeed UCSS/minify) strip
+       stylesheet rules for classes that only appear at runtime, which left
+       the characters visible before their turn. Inline styles can't be
+       stripped. */
+    text.split(/\s+/).forEach(function(w){
+      if(!w) return;
+      var sp=document.createElement('span'); sp.className='hr-w'; sp.style.display='inline-block';
+      for(var c=0;c<w.length;c++){
+        var ch=document.createElement('span'); ch.className='hr-c'; ch.textContent=w.charAt(c);
+        ch.style.cssText='display:inline-block;opacity:0;filter:blur(3px);transition:opacity .16s ease-out,filter .22s ease-out'
+          +(target===acc?';color:#DE6E30;-webkit-text-fill-color:#DE6E30':'');
+        sp.appendChild(ch);
+      }
+      target.appendChild(sp);
+      target.appendChild(document.createTextNode(' '));
+    });
+  }
+  function showCh(ch){ ch.style.opacity='1'; ch.style.filter='none'; }
+  function setPhrase(k,showAll){
+    pre.textContent=''; acc.textContent='';
+    buildWords(pre,DATA[k].pre);
+    buildWords(acc,DATA[k].acc);
+    if(showAll){ [].forEach.call(el.querySelectorAll('.hr-c'),showCh); }
+  }
+  function reveal(){
+    var cs=[].slice.call(el.querySelectorAll('.hr-c')), idx=0;
+    if(reduce){ cs.forEach(showCh); t=setTimeout(swap,HOLD); return; }
+    (function step(){
+      if(paused){ t=setTimeout(step,200); return; }
+      if(idx>=cs.length){ t=setTimeout(swap,HOLD); return; }
+      showCh(cs[idx++]);
+      t=setTimeout(step,STAG);
+    })();
+  }
+  function swap(){
+    if(paused){ t=setTimeout(swap,200); return; }
+    el.classList.add('is-out');
+    t=setTimeout(function(){
+      i=(i+1)%DATA.length;
+      setPhrase(i,false);
+      el.classList.remove('is-out');
+      t=setTimeout(reveal,GAP);
+    },FADE);
+  }
+  /* start fully showing headline 1 (SEO-friendly, no flash), then cycle */
+  setPhrase(0,true);
+  t=setTimeout(swap,START_HOLD);
+  /* pause only when the tab is hidden */
+  document.addEventListener('visibilitychange',function(){ paused=document.hidden; });
+})();
+</script>
+
+<script>
+/* ===================== HERO - brand edition (scoped IIFE) ===================== */
+(function(){
+const $=s=>document.querySelector(s);
+const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* 1. WebGL wisps */
+(function(){
+  const cv=$('#glsl'); if(!cv) return;
+  /* skip the WebGL hero animation on reduced-motion and on phones/tablets
+     (touch or narrow) - the CSS gradient background stays; saves battery,
+     GPU and main-thread work on mobile for better LCP/INP */
+  var _small=(window.innerWidth||document.documentElement.clientWidth||0)<900;
+  var _touch=window.matchMedia&&window.matchMedia('(hover:none)').matches;
+  if(reduced||_small||_touch){cv.remove();return}
+  const gl=cv.getContext('webgl',{antialias:false,alpha:true});
+  if(!gl){cv.remove();return}
+  const VS=`attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}`;
+  const FS=`precision mediump float;uniform vec2 r;uniform float t;
+  float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
+  float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);
+    return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y);}
+  float fbm(vec2 p){float v=0.,a=.5;for(int i=0;i<5;i++){v+=a*n(p);p=p*2.04+vec2(7.3,3.1);a*=.5;}return v;}
+  void main(){
+    vec2 uv=gl_FragCoord.xy/r; vec2 q=uv; q.x*=r.x/r.y;
+    float T=t*.05;
+    float f=fbm(q*1.5+vec2(T*.8,-T*.5));
+    f=fbm(q*1.2+f*1.4+vec2(-T*.4,T*.3));
+    vec3 white=vec3(1.);
+    vec3 navy=vec3(.098,.2,.365);
+    vec3 orange=vec3(.871,.431,.188);
+    float band=smoothstep(.45,.85,f);
+    float glowTR=smoothstep(.95,.15,distance(uv,vec2(.85,.85)));
+    float glowBL=smoothstep(1.05,.2,distance(uv,vec2(.05,.1)));
+    vec3 col=white;
+    col=mix(col,navy,band*glowTR*.14);
+    col=mix(col,navy,glowTR*.05);
+    col=mix(col,orange,band*glowBL*.10);
+    col=mix(col,orange,glowBL*.04);
+    gl_FragColor=vec4(col,1.);
+  }`;
+  function sh(t,s){const o=gl.createShader(t);gl.shaderSource(o,s);gl.compileShader(o);return o}
+  const pr=gl.createProgram();
+  gl.attachShader(pr,sh(gl.VERTEX_SHADER,VS));gl.attachShader(pr,sh(gl.FRAGMENT_SHADER,FS));
+  gl.linkProgram(pr);gl.useProgram(pr);
+  const buf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buf);
+  gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,3,-1,-1,3]),gl.STATIC_DRAW);
+  const loc=gl.getAttribLocation(pr,'p');gl.enableVertexAttribArray(loc);gl.vertexAttribPointer(loc,2,gl.FLOAT,false,0,0);
+  const uR=gl.getUniformLocation(pr,'r'),uT=gl.getUniformLocation(pr,'t');
+  function size(){const d=Math.min(devicePixelRatio||1,1.5);
+    cv.width=innerWidth*d*.7;cv.height=cv.parentElement.offsetHeight*d*.7;
+    gl.viewport(0,0,cv.width,cv.height);gl.uniform2f(uR,cv.width,cv.height);}
+  size();addEventListener('resize',size);
+  let vis=true;new IntersectionObserver(e=>vis=e[0].isIntersecting).observe(cv);
+  (function loop(ts){if(vis){gl.uniform1f(uT,ts/1000);gl.drawArrays(gl.TRIANGLES,0,3);}requestAnimationFrame(loop);})(0);
+})();
+
+/* 2. typed headline */
+(function(){
+  const words=["Into Enrolled Students.","On WhatsApp - in Seconds.","Before Competitors Reply.","With 40% Less Effort."];
+  const el=$('#typed');let w=0,c=0,del=false;
+  if(!el) return; if(reduced){el.textContent=words[0];return}
+  (function tick(){
+    const word=words[w];
+    el.textContent=word.slice(0,c+=del?-1:1);
+    let t=del?34:62;
+    if(!del&&c===word.length){t=2100;del=true}
+    else if(del&&c===0){del=false;w=(w+1)%words.length;t=420}
+    setTimeout(tick,t);
+  })();
+})();
+
+/* 3. counters */
+(function(){
+  const ease=x=>1-Math.pow(1-x,3);
+  function run(el,end,dur){const t0=performance.now();
+    (function f(t){const p=Math.min((t-t0)/dur,1);el.textContent=Math.round(end*ease(p)).toLocaleString();
+      if(p<1)requestAnimationFrame(f)})(t0)}
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){run(e.target,+e.target.dataset.xhcount,1400);io.unobserve(e.target)}}),{threshold:.6});
+  document.querySelectorAll('#xhero [data-xhcount]').forEach(el=>io.observe(el));
+  let conv=418;const cEl=$('#convNum'); if(cEl){run(cEl,conv,1600);
+  setInterval(()=>{conv+=Math.random()<.6?1:2;cEl.textContent=conv.toLocaleString()},reduced?9999999:5200);}
+})();
+
+/* 4. VidyaAI journey simulation */
+(function(){
+  if(!$('#s1')) return;
+  const scenarios=[
+    {chan:'WHATSAPP',who:'Riya S. · Pune · 22:41',msg:'Hi! I want to apply for B.Tech CSE but I think I missed the deadline 😟',
+     think:['Intent detected: Admission · B.Tech CSE','Eligibility & late-window policy checked','Scored 92/100 - high intent, hot region'],
+     reply:'Good news, Riya - late applications close Friday! I’ve reserved your slot and sent the form. Want help with documents?',
+     acts:['📅 Call auto-booked · tom 11:00','📄 Application link sent','🔥 Routed to Priya · CSE desk'],score:92,name:'Riya S.'},
+    {chan:'INSTAGRAM DM',who:'Arjun M. · Jaipur · 09:12',msg:'What’s the fee for MBA and do you offer scholarships?',
+     think:['Intent detected: Fees + Scholarship · MBA','Merit-scholarship matrix matched','Scored 78/100 - needs nurturing'],
+     reply:'Hi Arjun! MBA fees start at ₹4.2L/yr - and you may qualify for up to 40% merit scholarship. Shall I check your eligibility in 2 minutes?',
+     acts:['🎓 Scholarship quiz sent','✉️ Brochure delivered','📊 Added to MBA nurture journey'],score:78,name:'Arjun M.'},
+    {chan:'WEBSITE FORM',who:'Fatima K. · Dubai · 17:55',msg:'Interested in B.Sc Nursing for my daughter. Is hostel available for international students?',
+     think:['Intent detected: Parent enquiry · Intl','Hostel + visa docs retrieved','Scored 88/100 - decision-maker'],
+     reply:'Absolutely, Fatima - we have secure girls’ hostels with airport pickup for international students. I’ve emailed the parent guide. Prefer a call this week?',
+     acts:['🌍 Intl. counsellor assigned','🏠 Hostel guide emailed','📞 AI voice follow-up queued'],score:88,name:'Fatima K.'}
+  ];
+  const S=[ $('#s1'),$('#s2'),$('#s3'),$('#s4') ];
+  const T=[ $('#t1'),$('#t2'),$('#t3') ];
+  const ring=$('#ringFg'),ringVal=$('#ringVal'),ringWho=$('#ringWho');
+  const C=138.2; let i=0;
+  const wait=ms=>new Promise(r=>setTimeout(r,ms));
+  async function play(sc){
+    S.forEach(s=>s.classList.remove('on'));
+    T.forEach(t=>{t.classList.remove('done');t.lastElementChild.textContent=''});
+    ['a1','a2','a3'].forEach(id=>{const a=document.getElementById(id);a.classList.remove('on');a.textContent=''});
+    ring.style.strokeDashoffset=C; ringVal.textContent='0';
+    await wait(450);
+    $('#srcChan').textContent=sc.chan;
+    $('#hInbound').textContent=sc.msg;
+    $('#hWho').textContent=sc.who;
+    S[0].classList.add('on'); await wait(900);
+    S[1].classList.add('on');
+    for(let k=0;k<3;k++){T[k].lastElementChild.textContent=sc.think[k];await wait(700);T[k].classList.add('done');}
+    ringWho.textContent=sc.name;
+    ring.style.strokeDashoffset=C*(1-sc.score/100);
+    let sv=0;const si=setInterval(()=>{sv+=2;if(sv>=sc.score){sv=sc.score;clearInterval(si)}ringVal.textContent=sv},22);
+    await wait(700);
+    S[2].classList.add('on');
+    const r=$('#hReply');r.textContent='';
+    if(reduced){r.textContent=sc.reply}
+    else{for(const ch of sc.reply){r.textContent+=ch;await wait(13)}}
+    await wait(800);
+    S[3].classList.add('on');
+    for(let k=0;k<3;k++){const a=document.getElementById('a'+(k+1));a.textContent=sc.acts[k];await wait(380);a.classList.add('on')}
+    await wait(3600);
+  }
+  (async function loop(){for(;;){await play(scenarios[i%scenarios.length]);i++}})();
+})();
+
+/* 5. tilt + magnetic CTA */
+(function(){
+  if(reduced||!matchMedia('(pointer:fine)').matches)return;
+  const card=$('#console'); if(!card) return; const wrap=card.parentElement;
+  wrap.addEventListener('mousemove',e=>{const b=wrap.getBoundingClientRect();
+    const x=(e.clientX-b.left)/b.width-.5,y=(e.clientY-b.top)/b.height-.5;
+    card.style.transform=`rotateY(${x*6}deg) rotateX(${-y*6}deg)`});
+  wrap.addEventListener('mouseleave',()=>card.style.transform='');
+  const m=$('#magnet'); if(!m) return;
+  m.addEventListener('mousemove',e=>{const b=m.getBoundingClientRect();
+    m.style.transform=`translate(${(e.clientX-b.left-b.width/2)*.18}px,${(e.clientY-b.top-b.height/2)*.3}px)`});
+  m.addEventListener('mouseleave',()=>m.style.transform='');
+})();
+})();
+</script>
+</div>
+</main>
+
+<!-- ── shared page scripts (verbatim from the original homepage) ── -->
+<script id="ee-site-zoom-js">
+    (function () {
+        function eeApplyZoom() {
+            if (document.body) {
+                document.body.style.setProperty('zoom', '0.9', 'important');
+            }
+        }
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', eeApplyZoom);
+        } else {
+            eeApplyZoom();
+        }
+    })();
+    </script>
+<script>
+        // Render Lucide icons (retry if not loaded yet)
+        function renderIcons(){
+            if (window.lucide && typeof window.lucide.createIcons === 'function') {
+                window.lucide.createIcons();
+            } else {
+                setTimeout(renderIcons, 100);
+            }
+        }
+        renderIcons();
+
+        /* ── Header scroll-shadow effect + auto-hide on scroll down ──
+           On single blog posts the visitor wants maximum reading room,
+           so the header slides up when scrolling DOWN past the hero
+           and slides back into view the moment they scroll UP. Other
+           page types keep the header sticky (just adds the scroll
+           shadow). */
+        (function(){
+            var hdr = document.getElementById('site-header');
+            if (!hdr) return;
+            var isPost   = document.body.classList.contains('single-post') ||
+                           document.body.classList.contains('single-industry') ||
+                           document.body.classList.contains('single-use_case') ||
+                           document.body.classList.contains('ee-singular') &&
+                           document.body.classList.contains('single');
+            var lastY    = window.scrollY || 0;
+            var ticking  = false;
+            function onScroll(){
+                var y = window.scrollY || 0;
+                hdr.classList.toggle('scrolled', y > 50);
+                /* Auto-hide only on long-form post pages where the
+                   reader actively wants more room. */
+                if (isPost) {
+                    var goingDown = y > lastY;
+                    var pastHero  = y > 240;
+                    if (goingDown && pastHero) {
+                        hdr.classList.add('eh-hidden');
+                    } else {
+                        hdr.classList.remove('eh-hidden');
+                    }
+                }
+                lastY = y;
+                ticking = false;
+            }
+            window.addEventListener('scroll', function(){
+                if (!ticking) { requestAnimationFrame(onScroll); ticking = true; }
+            }, { passive: true });
+        })();
+
+        // Mobile Menu Toggle
+        const openBtn = document.getElementById('openMobileBtn');
+        const closeBtn = document.getElementById('closeMobileBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        if (openBtn) openBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            openBtn.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+        });
+
+        if (closeBtn) closeBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            if (openBtn) openBtn.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Mobile Accordion Logic
+        function toggleAccordion(btn) {
+            const item = btn.parentElement;
+            const wasActive = item.classList.contains('active');
+            document.querySelectorAll('.mobile-accordion-item').forEach(el => {
+                if (el !== item) {
+                    el.classList.remove('active');
+                    const b = el.querySelector('button[aria-expanded]'); if (b) b.setAttribute('aria-expanded', 'false');
+                }
+            });
+            item.classList.toggle('active');
+            btn.setAttribute('aria-expanded', wasActive ? 'false' : 'true');
+        }
+
+        // Reveal animations on load
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.reveal').forEach((el, i) => {
+                setTimeout(() => el.classList.add('active'), i * 150);
+            });
+        });
+
+        // Scroll Progress Bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+            const progressEl = document.getElementById('progress');
+            if (progressEl) {
+                progressEl.style.width = scrolled + '%';
+                progressEl.setAttribute('aria-valuenow', Math.round(scrolled));
+            }
+        });
+
+        // ───────── Sticky-fail guard ─────────
+        // If some page-level CSS (typically `overflow:hidden` on an ancestor or
+        // a transform on <body>) silently kills position:sticky, the header
+        // visually disappears after the first scroll. We detect that and
+        // promote the header to position:fixed so it stays usable.
+        (function(){
+            const header = document.getElementById('site-header');
+            if (!header) return;
+
+            // Measure once so the body padding shim fills the gap when fixed
+            function setHeaderHeightVar() {
+                document.documentElement.style.setProperty('--ee-header-h', header.offsetHeight + 'px');
+            }
+            setHeaderHeightVar();
+            window.addEventListener('resize', setHeaderHeightVar);
+
+            let lastTop = null;
+            function check() {
+                const rect = header.getBoundingClientRect();
+                // Sticky behaviour means top stays at 0 when scrolled. If we
+                // see top < 0 the header has scrolled away — sticky is broken.
+                if (rect.top < -2 && !header.classList.contains('ee-force-fixed')) {
+                    header.classList.add('ee-force-fixed');
+                    document.body.classList.add('ee-header-fixed');
+                    setHeaderHeightVar();
+                }
+                lastTop = rect.top;
+            }
+            // Initial check after layout settles
+            requestAnimationFrame(check);
+            window.addEventListener('scroll', check, { passive: true });
+        })();
+    </script>
+<script>
+/* honour reduced-motion / low-power devices */
+var RM = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* progress bar removed - #ee-progress (global, rAF-driven) is the single scroll progress indicator */
+
+/* reveal */
+var rvObs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');rvObs.unobserve(e.target);}});},{threshold:0,rootMargin:'0px 0px -8%'});
+document.querySelectorAll('.rv').forEach(function(el){rvObs.observe(el);});
+
+/* (hero typewriter removed - now handled by the scoped #xhero hero script) */
+
+/* counters */
+function animate(el){var t=parseFloat(el.dataset.count),pre=el.dataset.prefix||'',suf=el.dataset.suffix||'';var dec=t%1!==0,cur=0,steps=46,inc=t/steps;var id=setInterval(function(){cur+=inc;if(cur>=t){cur=t;clearInterval(id);}el.textContent=pre+(dec?cur.toFixed(1):Math.round(cur).toLocaleString())+suf;},26);}
+var cObs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){animate(e.target);cObs.unobserve(e.target);}});},{threshold:.6});
+document.querySelectorAll('[data-count]').forEach(function(el){cObs.observe(el);});
+
+/* (hero live flow removed - replaced by the scoped #xhero VidyaAI console simulation) */
+
+/* marquee is now a static centered grid - logos shown once, no duplication/scroll */
+
+/* ============ Counsellor streaming dashboard ============ */
+(function(){
+  var bars=document.getElementById('bars');
+  if(bars){var bi=[].slice.call(bars.children);(function r(){bi.forEach(function(b){b.style.height=(28+Math.random()*62)+'%';});setTimeout(r,1600);})();}
+  /* streaming sparkline */
+  var cv=document.getElementById('spark');
+  if(cv){var ctx=cv.getContext('2d');var data=[];for(var i=0;i<60;i++)data.push(40+Math.random()*40);
+    function rs(){cv.width=cv.clientWidth;cv.height=56;}rs();addEventListener('resize',rs);
+    setInterval(function(){data.push(35+Math.random()*55);data.shift();},220);
+    (function draw(){var w=cv.width,h=cv.height;ctx.clearRect(0,0,w,h);
+      var g=ctx.createLinearGradient(0,0,w,0);g.addColorStop(0,'#DE6E30');g.addColorStop(1,'#19345d');
+      ctx.beginPath();data.forEach(function(v,i){var x=i/(data.length-1)*w,y=h-(v/100)*h;i?ctx.lineTo(x,y):ctx.moveTo(x,y);});
+      ctx.strokeStyle=g;ctx.lineWidth=2;ctx.stroke();ctx.lineTo(w,h);ctx.lineTo(0,h);ctx.closePath();
+      var f=ctx.createLinearGradient(0,0,0,h);f.addColorStop(0,'rgba(222,110,48,.22)');f.addColorStop(1,'rgba(222,110,48,0)');ctx.fillStyle=f;ctx.fill();
+      if(!RM)requestAnimationFrame(draw);})();
+  }
+  /* morphing KPI views */
+  var views=[{t:'· TODAY',conv:'+12%',rt:'58s',clo:'9.2x'},{t:'· THIS WEEK',conv:'+19%',rt:'1.1m',clo:'7.8x'},{t:'· THIS CYCLE',conv:'+40%',rt:'1.4m',clo:'9.2x'}];
+  var v=0,tag=document.getElementById('viewTag'),kc=document.getElementById('kConv'),kr=document.getElementById('kRt'),kl=document.getElementById('kClo');
+  if(tag&&kc&&kr&&kl){ setInterval(function(){v=(v+1)%views.length;var d=views[v];tag.textContent=d.t;kc.textContent=d.conv;kr.textContent=d.rt;kl.textContent=d.clo;},2600); }
+})();
+
+
+
+/* ============ Self-typing chats ============ */
+function runChat(bodyId,script){
+  var body=document.getElementById(bodyId);if(!body)return;var i=0;
+  function push(m){var d=document.createElement('div');d.className='cmsg cmsg--'+(m.who==='u'?'u':m.who==='sys'?'sys':'a');d.innerHTML=m.text;body.appendChild(d);body.scrollTop=body.scrollHeight;i++;}
+  function next(){if(i>=script.length)return;var m=script[i];
+    if(m.who==='a'){var t=document.createElement('div');t.className='ctyping';t.innerHTML='<i></i><i></i><i></i>';body.appendChild(t);body.scrollTop=body.scrollHeight;setTimeout(function(){t.remove();push(m);setTimeout(next,650);},950);}
+    else if(m.who==='sys'){push(m);setTimeout(next,500);}else{push(m);setTimeout(next,700);}}
+  var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){next();obs.disconnect();}});},{threshold:.4});
+  obs.observe(body);
+}
+
+/* ============ Live system-feed counter ============ */
+(function(){
+  var el=document.getElementById('amsToday');if(!el||RM)return;
+  var started=false;var sec=el.closest('section');
+  var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&!started){started=true;
+    setInterval(function(){if(Math.random()>0.4){el.textContent=(parseInt(el.textContent,10)+1);}},3200);o.disconnect();}});},{threshold:.2});
+  if(sec)o.observe(sec);
+})();
+
+
+
+/* ============ FAQ accordion ============ */
+document.querySelectorAll('.qa button').forEach(function(b){
+  b.addEventListener('click',function(){var qa=b.parentElement,a=qa.querySelector('.qa__a'),open=qa.classList.contains('open');
+    document.querySelectorAll('.qa').forEach(function(x){x.classList.remove('open');x.querySelector('.qa__a').style.maxHeight=null;x.querySelector('button').setAttribute('aria-expanded','false');});
+    if(!open){qa.classList.add('open');a.style.maxHeight=a.scrollHeight+'px';b.setAttribute('aria-expanded','true');}});
+});
+
+
+
+/* The integrations explorer (category tabs + rotating grid) is gone - the
+   section is a single hub board now, and its connector script lives with the
+   markup. */
+
+
+
+
+/* ============ Lead-journey roadmap behind phone ============ */
+(function(){
+  var rm=document.getElementById('roadmap');if(!rm)return;
+  var nodes=rm.querySelectorAll('.rm-node'),prog=document.getElementById('rmProg');
+  var i=0,started=false;
+  function step(){
+    nodes.forEach(function(n,idx){n.classList.toggle('on',idx<=i);});
+    if(prog)prog.style.strokeDashoffset=(100-(i+1)*20);
+    i++;if(i>=nodes.length){setTimeout(function(){i=0;nodes.forEach(function(n){n.classList.remove('on');});if(prog)prog.style.strokeDashoffset=100;},900);}
+  }
+  var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&!started){started=true;step();setInterval(step,RM?4000:1600);o.disconnect();}});},{threshold:.2});
+  o.observe(rm);
+})();
+
+/* ============ Demo form - functional lead capture via WhatsApp ============ */
+(function(){
+  var f=document.getElementById('demoForm');if(!f)return;
+  function esc(s){return String(s).replace(/[<>&]/g,function(c){return{'<':'&lt;','>':'&gt;','&':'&amp;'}[c];});}
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!f.checkValidity()){f.reportValidity&&f.reportValidity();return;}
+    var el=f.querySelectorAll('input,select');
+    var name=el[0].value.trim(),inst=el[1].value.trim(),wa=el[2].value.trim(),email=el[3].value.trim(),vol=el[4].value;
+    var msg='Hi ExtraaEdge! I would like to book a free demo of your AI Admission CRM.%0A'+
+      '%0AName: '+encodeURIComponent(name)+'%0AInstitute: '+encodeURIComponent(inst)+
+      '%0AWhatsApp: '+encodeURIComponent(wa)+'%0AEmail: '+encodeURIComponent(email)+
+      '%0AMonthly enquiries: '+encodeURIComponent(vol);
+    var link='https://wa.me/918956982897?text='+msg;
+    var ok=document.getElementById('demoOk');
+    ok.innerHTML='🎉 Thanks '+esc(name.split(' ')[0]||'')+'! Your request is in - our admissions expert will reach out within the hour.'+
+      '<br><a href="'+link+'" target="_blank" rel="noopener" class="btn btn-dark" style="margin-top:14px">Confirm instantly on WhatsApp</a>';
+    f.style.display='none';ok.style.display='block';
+    ok.scrollIntoView({behavior:'smooth',block:'center'});
+  });
+})();
+
+
+
+/* (legacy duplicate WebGL hero loop removed - #xhero's scoped renderer owns the canvas and pauses off-screen) */
+</script>
+<script>
+/* Anchor-landing corrector: with content-visibility, sections render
+   just-in-time while a long smooth anchor-scroll is in flight, so estimated
+   heights can leave the jump a few hundred px off. Shortly after any hash
+   navigation, re-align the target once (instant, imperceptible). Armed only
+   around hash changes so normal scrolling is never touched. */
+(function(){
+  var armedUntil=0;
+  function check(){
+    if(Date.now()>armedUntil) return;
+    var h=location.hash; if(!h||h.length<2) return;
+    var el=document.getElementById(decodeURIComponent(h.slice(1))); if(!el) return;
+    var sm=parseFloat(getComputedStyle(el).scrollMarginTop)||0;
+    var top=el.getBoundingClientRect().top;
+    if(Math.abs(top-sm)>12){
+      window.scrollTo({top:Math.round(window.pageYOffset+top-sm),left:0,behavior:'instant'});
+    }
+  }
+  function arm(){ armedUntil=Date.now()+2400; setTimeout(check,700); setTimeout(check,1500); setTimeout(check,2300); }
+  window.addEventListener('hashchange',arm);
+  if(location.hash){ (document.readyState==='complete') ? arm() : window.addEventListener('load',arm); }
+})();
+</script>
+</body>
+</html>

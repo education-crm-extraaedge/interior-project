@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ExtraaEdge homepage · section index</title>
+<style>
+  :root { --blue:#19335D; --orange:#DE6E30; --ink:#0f172a; --muted:#64748b; --line:#e2e8f0; --bg:#f8fafc; --card:#fff; }
+  @media (prefers-color-scheme: dark) {
+    :root { --ink:#e6edf7; --muted:#93a4bd; --line:#24344d; --bg:#0d1522; --card:#131e2f; }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; padding:40px 20px 80px; background:var(--bg); color:var(--ink);
+         font:16px/1.5 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
+  .wrap { max-width:1100px; margin:0 auto; }
+  h1 { font-size:28px; margin:0 0 6px; letter-spacing:-.02em; }
+  .sub { color:var(--muted); margin:0 0 28px; }
+  .hint { background:var(--card); border:1px solid var(--line); border-left:4px solid var(--orange);
+           border-radius:10px; padding:14px 18px; margin:0 0 28px; color:var(--muted); font-size:14.5px; }
+  .hint code { background:rgba(127,127,127,.14); padding:1px 6px; border-radius:5px; color:var(--ink); }
+  ul { list-style:none; margin:0; padding:0; display:grid; gap:12px;
+        grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); }
+  .card a { display:grid; gap:4px; padding:16px 18px; background:var(--card); border:1px solid var(--line);
+             border-radius:12px; text-decoration:none; color:inherit; transition:.18s; height:100%; }
+  .card a:hover { border-color:var(--orange); transform:translateY(-2px);
+                   box-shadow:0 10px 24px -14px rgba(0,0,0,.45); }
+  .num { font-size:12px; font-weight:700; color:var(--orange); letter-spacing:.1em; }
+  .ttl { font-size:16.5px; font-weight:650; color:var(--blue); }
+  @media (prefers-color-scheme: dark) { .ttl { color:#cfe0ff; } }
+  .meta { font-size:12.5px; color:var(--muted); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>ExtraaEdge homepage — 29 standalone sections</h1>
+    <p class="sub">Each card opens one section as its own runnable page.</p>
+    <p class="hint">Open this folder in VS Code and start <strong>Live Server</strong> (right-click &rarr;
+       <em>Open with Live Server</em>) on this file, or on any file in <code>sections/</code> to run that
+       section on its own. Every page loads the shared stylesheet from
+       <code>assets/global.css</code>, so keep the folder structure intact.</p>
+    <ul>
+      <li class="card">
+        <a href="sections/01-header.html">
+          <span class="num">01</span>
+          <span class="ttl">Site Header &amp; Mobile Menu</span>
+          <span class="meta">01-header.html · 108 KB · source lines 708-1440, 1575-1872, 1931-2073</span>
+        </a>
+      </li>
+      <li class="card">
+        <a href="sections/02-quick-toc.html">
+          <span class="num">02</span>
+          <span class="ttl">Quick Table of Contents (floating)</span>
+          <span class="meta">02-quick-toc.html · 24 KB · source lines 2298-2394</span>
+        </a>
+      </li>
+      <li class="card">
+        <a href="sections/03-hero.html">
+          <span class="num">03</span>
+          <span class="ttl">Hero + Book-a-Demo Drawer</span>
+          <span class="meta">03-hero.html · 48 KB · source lines 2272-2297, 2395-2483, 2484-2516, 2517-2809</span>
+        </a>
+      </li>
+      <li class="card">
+        <a href="sections/04-trusted-institutions.html">
+          <span class="num">04</span>
+          <span class="ttl">Trusted Institutions Logo Marquee</span>
+          <span class="meta">04-trusted-institutions.html · 63 KB · source lines 2810-3076, 9362-9394</span>
+        </a>
+      </li>
+      <li class="card">
+        <a href="sections/05-why-extraaedge.html">
+          <span class="num">05</span>
+          <span class="ttl">Why Institutes Choose ExtraaEdge</span>
+          <span class="meta">05-why-extraaedge.html · 26 KB · source lines 3077-3340</span>
+        </a>
+      </li>
+      <li class="card">
+        <a href="sections/06-respond-first-ai.html">
+          <span class="num">06</span>
+          <span class="ttl">Respond First With AI Agents</span>
+          <span class="meta">06-respond-first-ai.html · 29 KB · source lines 3341-3620</span>
+        </a>
+      </li>
+      <li class="card">
+        <a href="sections/07-platform-live-demo.html">
+          <span class="num">07</span>
+          <span class="ttl">Platform — Live Interactive Demo</span>
+          <span class="meta">07-platform-live-demo.html · 178 KB · source lines 3621-5019</span>
+        </a>
+      </li>
+      <li class="card">
+        <a href="sections/08-see-real-crm-popup.html">
+          <span class="num">08</span>
+          <span class="ttl">See the Real CRM — Booking Popup</span>
+          <span class="meta">08-see-real-crm-popup.html · 24 KB · source lines 5020-5187</span>
+        </a>
+      </li>
+      <li class="card">
+        <a href="sections/09-vidyaai-powered-by.html">
+          <span class="num">09</span>
+          <span class="ttl">Powered by VidyaAI (embed)</span>
+          <span class="meta">09-vidyaai-powered-by.html · 85 KB · source lines 5394-6212, 9525-9534</span>
+        </a>
+      </li>
+      <li class="card">
+        <a href="sections/10-vidya-suite.html">
+          <span class="num">10</span>
+          <span class="ttl">Meet Vidya AI — Suite</span>
+          <span class="meta">10-vidya-suite.html · 44 KB · source lines 6481-6882</span>
+        </a>
+      </li>
+      <li class="card">
+        <a href="sections/11-architect-mindset.html">
+          <span class="num">11</span>
+          <span class="ttl">Architect Mindset</span>
+          <span class="meta">11-architect-mindset.html · 20 KB · source lines 6883-6923</span>
+        </a>
+      </li>
+      <li class="card">
+        <a href="sections/12-stories.html">
+          <span class="num">12</span>
+          <span class="ttl">Customer Stories</span>
+          <span class="meta">12-stories.html · 35 KB · source lines 5188-5292, 6924-7060</span>
+        </a>
+      </li>
+      <li class="card">
+        <a href="sections/13-mid-cta.html">
+          <span class="num">13</span>
+          <span class="ttl">Mid-Page CTA — Book a Demo</span>
+          <span class="meta">13-mid-cta.html · 18 KB · source lines 7061-7084</span>
+        </a>
+      </li>
+      <li class="card">
+        <a href="sections/14-industries.html">
+          <span class="num">14</span>
+          <span class="ttl">Industries We Serve</span>
+          <span class="meta">14-industries.html · 26 KB · source lines 7085-7379</span>
+        </a>
+      </li>
+      <li class="card">
+        <a href="sections/15-cro-roi.html">
+          <span class="num">15</span>
+          <span class="ttl">Why Teams Choose Us + ROI Calculator</span>
+          <span class="meta">15-cro-roi.html · 26 KB · source lines 7380-7455</span>
+        </a>
+      </li>
+      <li class="card">
+        <a href="sections/16-misc-widgets.html">
+          <span class="num">16</span>
+          <span class="ttl">Scroll Widgets (divider, progress, toast)</span>
+          <span class="meta">16-misc-widgets.html · 21 KB · source lines 7456-7571</span>
+        </a>
+      </li>
+      <li class="card">
+        <a href="sections/17-integrations.html">
+          <span class="num">17</span>
+          <span class="ttl">Integrations Hub</span>
+          <span class="meta">17-integrations.html · 29 KB · source lines 7572-7844</span>
+        </a>
+      </li>
+      <li class="card">
+        <a href="sections/18-security.html">
+          <span class="num">18</span>
+          <span class="ttl">Security &amp; Compliance</span>
+          <span class="meta">18-security.html · 18 KB · source lines 7845-7863</span>
+        </a>
+      </li>
+      <li class="card">
+        <a href="sections/19-go-live.html">
+          <span class="num">19</span>
+          <span class="ttl">Go Live in 7 Days</span>
+          <span class="meta">19-go-live.html · 18 KB · source lines 7913-7931</span>
+        </a>
+      </li>
+      <li class="card">
+        <a href="sections/20-switch-crm.html">
+          <span class="num">20</span>
+          <span class="ttl">Switch From Your Current CRM</span>
+          <span class="meta">20-switch-crm.html · 19 KB · source lines 7932-7956</span>
+        </a>
+      </li>
+      <li class="card">
+        <a href="sections/21-pricing.html">
+          <span class="num">21</span>
+          <span class="ttl">Simple Product-Based Pricing</span>
+          <span class="meta">21-pricing.html · 19 KB · source lines 7957-8007</span>
+        </a>
+      </li>
+      <li class="card">
+        <a href="sections/22-faq.html">
+          <span class="num">22</span>
+          <span class="ttl">FAQ</span>
+          <span class="meta">22-faq.html · 22 KB · source lines 8008-8033</span>
+        </a>
+      </li>
+      <li class="card">
+        <a href="sections/23-products.html">
+          <span class="num">23</span>
+          <span class="ttl">Our Products</span>
+          <span class="meta">23-products.html · 46 KB · source lines 8034-8291</span>
+        </a>
+      </li>
+      <li class="card">
+        <a href="sections/24-solutions.html">
+          <span class="num">24</span>
+          <span class="ttl">Solutions</span>
+          <span class="meta">24-solutions.html · 36 KB · source lines 8401-8532</span>
+        </a>
+      </li>
+      <li class="card">
+        <a href="sections/25-resources.html">
+          <span class="num">25</span>
+          <span class="ttl">Resources &amp; Events</span>
+          <span class="meta">25-resources.html · 24 KB · source lines 8533-8709</span>
+        </a>
+      </li>
+      <li class="card">
+        <a href="sections/26-blog.html">
+          <span class="num">26</span>
+          <span class="ttl">Latest From the Blog</span>
+          <span class="meta">26-blog.html · 19 KB · source lines 8710-8781</span>
+        </a>
+      </li>
+      <li class="card">
+        <a href="sections/27-scroll-progress-cta.html">
+          <span class="num">27</span>
+          <span class="ttl">Scroll Progress Bar + Sticky Demo Pill</span>
+          <span class="meta">27-scroll-progress-cta.html · 22 KB · source lines 8979-9054</span>
+        </a>
+      </li>
+      <li class="card">
+        <a href="sections/28-footer.html">
+          <span class="num">28</span>
+          <span class="ttl">Site Footer</span>
+          <span class="meta">28-footer.html · 23 KB · source lines 9677-10036</span>
+        </a>
+      </li>
+      <li class="card">
+        <a href="sections/29-floating-actions.html">
+          <span class="num">29</span>
+          <span class="ttl">Floating Actions (WhatsApp / Call / TOC)</span>
+          <span class="meta">29-floating-actions.html · 23 KB · source lines 10037-10191</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>

@@ -1,0 +1,234 @@
+[
+  {
+    "order": 1,
+    "slug": "header",
+    "title": "Site Header & Mobile Menu",
+    "file": "sections/01-header.html",
+    "source_lines": "708-1440, 1575-1872, 1931-2073",
+    "bytes": 110884
+  },
+  {
+    "order": 2,
+    "slug": "quick-toc",
+    "title": "Quick Table of Contents (floating)",
+    "file": "sections/02-quick-toc.html",
+    "source_lines": "2298-2394",
+    "bytes": 25245
+  },
+  {
+    "order": 3,
+    "slug": "hero",
+    "title": "Hero + Book-a-Demo Drawer",
+    "file": "sections/03-hero.html",
+    "source_lines": "2272-2297, 2395-2483, 2484-2516, 2517-2809",
+    "bytes": 49775
+  },
+  {
+    "order": 4,
+    "slug": "trusted-institutions",
+    "title": "Trusted Institutions Logo Marquee",
+    "file": "sections/04-trusted-institutions.html",
+    "source_lines": "2810-3076, 9362-9394",
+    "bytes": 65262
+  },
+  {
+    "order": 5,
+    "slug": "why-extraaedge",
+    "title": "Why Institutes Choose ExtraaEdge",
+    "file": "sections/05-why-extraaedge.html",
+    "source_lines": "3077-3340",
+    "bytes": 27259
+  },
+  {
+    "order": 6,
+    "slug": "respond-first-ai",
+    "title": "Respond First With AI Agents",
+    "file": "sections/06-respond-first-ai.html",
+    "source_lines": "3341-3620",
+    "bytes": 30206
+  },
+  {
+    "order": 7,
+    "slug": "platform-live-demo",
+    "title": "Platform \u2014 Live Interactive Demo",
+    "file": "sections/07-platform-live-demo.html",
+    "source_lines": "3621-5019",
+    "bytes": 183006
+  },
+  {
+    "order": 8,
+    "slug": "see-real-crm-popup",
+    "title": "See the Real CRM \u2014 Booking Popup",
+    "file": "sections/08-see-real-crm-popup.html",
+    "source_lines": "5020-5187",
+    "bytes": 25179
+  },
+  {
+    "order": 9,
+    "slug": "vidyaai-powered-by",
+    "title": "Powered by VidyaAI (embed)",
+    "file": "sections/09-vidyaai-powered-by.html",
+    "source_lines": "5394-6212, 9525-9534",
+    "bytes": 87915
+  },
+  {
+    "order": 10,
+    "slug": "vidya-suite",
+    "title": "Meet Vidya AI \u2014 Suite",
+    "file": "sections/10-vidya-suite.html",
+    "source_lines": "6481-6882",
+    "bytes": 45892
+  },
+  {
+    "order": 11,
+    "slug": "architect-mindset",
+    "title": "Architect Mindset",
+    "file": "sections/11-architect-mindset.html",
+    "source_lines": "6883-6923",
+    "bytes": 20804
+  },
+  {
+    "order": 12,
+    "slug": "stories",
+    "title": "Customer Stories",
+    "file": "sections/12-stories.html",
+    "source_lines": "5188-5292, 6924-7060",
+    "bytes": 36836
+  },
+  {
+    "order": 13,
+    "slug": "mid-cta",
+    "title": "Mid-Page CTA \u2014 Book a Demo",
+    "file": "sections/13-mid-cta.html",
+    "source_lines": "7061-7084",
+    "bytes": 19336
+  },
+  {
+    "order": 14,
+    "slug": "industries",
+    "title": "Industries We Serve",
+    "file": "sections/14-industries.html",
+    "source_lines": "7085-7379",
+    "bytes": 26641
+  },
+  {
+    "order": 15,
+    "slug": "cro-roi",
+    "title": "Why Teams Choose Us + ROI Calculator",
+    "file": "sections/15-cro-roi.html",
+    "source_lines": "7380-7455",
+    "bytes": 27483
+  },
+  {
+    "order": 16,
+    "slug": "misc-widgets",
+    "title": "Scroll Widgets (divider, progress, toast)",
+    "file": "sections/16-misc-widgets.html",
+    "source_lines": "7456-7571",
+    "bytes": 22323
+  },
+  {
+    "order": 17,
+    "slug": "integrations",
+    "title": "Integrations Hub",
+    "file": "sections/17-integrations.html",
+    "source_lines": "7572-7844",
+    "bytes": 30454
+  },
+  {
+    "order": 18,
+    "slug": "security",
+    "title": "Security & Compliance",
+    "file": "sections/18-security.html",
+    "source_lines": "7845-7863",
+    "bytes": 19319
+  },
+  {
+    "order": 19,
+    "slug": "go-live",
+    "title": "Go Live in 7 Days",
+    "file": "sections/19-go-live.html",
+    "source_lines": "7913-7931",
+    "bytes": 19329
+  },
+  {
+    "order": 20,
+    "slug": "switch-crm",
+    "title": "Switch From Your Current CRM",
+    "file": "sections/20-switch-crm.html",
+    "source_lines": "7932-7956",
+    "bytes": 19850
+  },
+  {
+    "order": 21,
+    "slug": "pricing",
+    "title": "Simple Product-Based Pricing",
+    "file": "sections/21-pricing.html",
+    "source_lines": "7957-8007",
+    "bytes": 20057
+  },
+  {
+    "order": 22,
+    "slug": "faq",
+    "title": "FAQ",
+    "file": "sections/22-faq.html",
+    "source_lines": "8008-8033",
+    "bytes": 22747
+  },
+  {
+    "order": 23,
+    "slug": "products",
+    "title": "Our Products",
+    "file": "sections/23-products.html",
+    "source_lines": "8034-8291",
+    "bytes": 47759
+  },
+  {
+    "order": 24,
+    "slug": "solutions",
+    "title": "Solutions",
+    "file": "sections/24-solutions.html",
+    "source_lines": "8401-8532",
+    "bytes": 37624
+  },
+  {
+    "order": 25,
+    "slug": "resources",
+    "title": "Resources & Events",
+    "file": "sections/25-resources.html",
+    "source_lines": "8533-8709",
+    "bytes": 24962
+  },
+  {
+    "order": 26,
+    "slug": "blog",
+    "title": "Latest From the Blog",
+    "file": "sections/26-blog.html",
+    "source_lines": "8710-8781",
+    "bytes": 20099
+  },
+  {
+    "order": 27,
+    "slug": "scroll-progress-cta",
+    "title": "Scroll Progress Bar + Sticky Demo Pill",
+    "file": "sections/27-scroll-progress-cta.html",
+    "source_lines": "8979-9054",
+    "bytes": 23375
+  },
+  {
+    "order": 28,
+    "slug": "footer",
+    "title": "Site Footer",
+    "file": "sections/28-footer.html",
+    "source_lines": "9677-10036",
+    "bytes": 24374
+  },
+  {
+    "order": 29,
+    "slug": "floating-actions",
+    "title": "Floating Actions (WhatsApp / Call / TOC)",
+    "file": "sections/29-floating-actions.html",
+    "source_lines": "10037-10191",
+    "bytes": 24050
+  }
+]

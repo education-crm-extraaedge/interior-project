@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Customer Stories · ExtraaEdge section</title>
+    <meta name="title" content="ExtraaEdge - AI-Powered Admissions Growth Platform">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preconnect"   href="https://fonts.googleapis.com">
+    <link rel="preconnect"   href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://www.clarity.ms">
+    <link rel="dns-prefetch" href="https://www.youtube.com">
+    <link rel="dns-prefetch" href="https://unpkg.com">
+    <link rel="dns-prefetch" href="https://eeconfigstaticfiles.blob.core.windows.net">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
+    <script defer src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- shared stylesheet: every <style> block of the original page, in order -->
+    <link rel="stylesheet" href="../assets/global.css">
+</head>
+<body>
+<!-- ══════════════════════════════════════════════════════════════════════════
+     SECTION 12 · Customer Stories
+     Extracted verbatim from ExtraaEdgeHomepageWithVideoAndOldHeader.html
+     (source lines 5188-5292, 6924-7060)
+     Open this file with VS Code "Live Server" (or any static server) to run
+     this section on its own.
+     ══════════════════════════════════════════════════════════════════════════ -->
+<main id="main-content">
+<div class="ee-home">
+<!-- ===================== ARCHITECT MINDSET (brand philosophy band) ===================== -->
+
+<script>
+(function(){
+  var root=document.getElementById('stories'); if(!root) return;
+  var rail=root.querySelector('.cs3-rail');
+  var cards=[].slice.call(root.querySelectorAll('.cs3-card'));
+  var cap=document.getElementById('cs3Cap'), capQ=document.getElementById('cs3Q'), capN=document.getElementById('cs3N'), capL=document.getElementById('cs3Logo');
+  var active=-1, raf=0, capT=0;
+
+  cards.forEach(function(c){ c.__media=c.innerHTML; });
+  function stop(c){
+    if(!c.classList.contains('playing')) return;
+    c.classList.remove('playing');
+    c.innerHTML=c.__media;
+  }
+  /* The speaker's logo is optional: a card with no data-logo - or one whose
+     image fails to load - just shows the name on its own, no empty box. */
+  function setLogo(c){
+    if(!capL) return;
+    var src=c.getAttribute('data-logo')||'';
+    if(!src){ capL.hidden=true; capL.removeAttribute('src'); return; }
+    capL.onerror=function(){ capL.hidden=true; };
+    capL.src=src;
+    capL.alt=(c.dataset.n||'')+' logo';
+    capL.hidden=false;
+  }
+  /* the caption always narrates whichever card is centred on the stage */
+  function caption(c){
+    clearTimeout(capT);
+    cap.classList.add('fade');
+    capT=setTimeout(function(){
+      capQ.innerHTML=c.dataset.q;
+      capN.innerHTML='<b>'+c.dataset.n+'</b>, '+c.dataset.r;
+      setLogo(c);
+      cap.classList.remove('fade');
+    },160);
+  }
+  function update(){
+    raf=0;
+    var mid=rail.scrollLeft+rail.clientWidth/2, best=0, bd=Infinity;
+    cards.forEach(function(c,i){
+      var d=Math.abs(c.offsetLeft+c.offsetWidth/2-mid);
+      if(d<bd){bd=d;best=i;}
+    });
+    if(best!==active){
+      active=best;
+      cards.forEach(function(c,i){ c.classList.toggle('on',i===best); if(i!==best) stop(c); });
+      caption(cards[best]);
+    }
+  }
+  rail.addEventListener('scroll',function(){ if(!raf) raf=requestAnimationFrame(update); },{passive:true});
+  update();
+
+  function center(c){ rail.scrollTo({left:c.offsetLeft+c.offsetWidth/2-rail.clientWidth/2,behavior:'smooth'}); }
+  function play(c){
+    if(c.classList.contains('playing')) return;
+    c.classList.add('playing');
+    c.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+c.dataset.yt+
+      '?autoplay=1&rel=0&modestbranding=1" title="Customer story video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+  }
+  cards.forEach(function(c){
+    c.addEventListener('click',function(){ c.classList.contains('on') ? play(c) : center(c); });
+    c.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); c.classList.contains('on') ? play(c) : center(c); } });
+  });
+  var pb=document.getElementById('cs3Play');
+  if(pb) pb.addEventListener('click',function(){ if(active>-1) play(cards[active]); });
+
+  var aL=root.querySelector('.cs3-arw--l'), aR=root.querySelector('.cs3-arw--r');
+  function go(dir){ var n=Math.min(Math.max(active+dir,0),cards.length-1); center(cards[n]); }
+  if(aL) aL.addEventListener('click',function(){go(-1); restart();});
+  if(aR) aR.addEventListener('click',function(){go(1); restart();});
+
+  /* ── auto-advance: one story every 3 seconds ──
+     Pauses while the visitor hovers or touches the rail, while a video is
+     playing, when the tab or section is off-screen, and for reduced-motion
+     visitors; loops back to the first story after the last. */
+  var auto=null, inView=false;
+  var noMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function tick(){
+    if(document.hidden || !inView) return;
+    if(root.querySelector('.cs3-card.playing')) return;
+    center(cards[(active+1)%cards.length]);
+  }
+  function startAuto(){ if(!auto && !noMotion) auto=setInterval(tick,3000); }
+  function stopAuto(){ if(auto){ clearInterval(auto); auto=null; } }
+  function restart(){ stopAuto(); startAuto(); }
+  try{
+    var io=new IntersectionObserver(function(en){
+      en.forEach(function(x){ inView=x.isIntersecting; });
+    },{threshold:.35});
+    io.observe(root);
+  }catch(e){ inView=true; }
+  rail.addEventListener('mouseenter',stopAuto);
+  rail.addEventListener('mouseleave',startAuto);
+  rail.addEventListener('touchstart',stopAuto,{passive:true});
+  rail.addEventListener('touchend',function(){ restart(); },{passive:true});
+  cards.forEach(function(c){ c.addEventListener('click',restart); });
+  startAuto();
+})();
+</script>
+
+<section id="stories" aria-labelledby="stories-title">
+  <style>
+    /* ── What Our Clients Are Saying · minimal light carousel (scoped #stories) ── */
+    #stories{position:relative;overflow:hidden;background:linear-gradient(180deg,#FBFCFE,#F5F8FC);padding:clamp(48px,6vw,84px) 0 clamp(44px,5.5vw,72px);font-family:'Inter',system-ui,sans-serif}
+    #stories .cs3-head{text-align:center;max-width:760px;margin:0 auto clamp(24px,3vw,38px);padding:0 24px}
+    html body #main-content #stories h2{color:#19335D !important;margin:0 !important}
+    /* rail: centred stage, neighbours crop at the viewport edges like the reference */
+    #stories .cs3-zone{position:relative}
+    #stories .cs3-rail{--wc:min(880px,64vw);display:flex;gap:clamp(14px,2vw,24px);overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;padding:6px calc((100vw - var(--wc))/2) 6px}
+    #stories .cs3-rail::-webkit-scrollbar{display:none}
+    #stories .cs3-card{position:relative;flex:0 0 var(--wc);min-width:0;scroll-snap-align:center;aspect-ratio:16/9;border-radius:20px;overflow:hidden;background:#0F2040;border:1px solid rgba(255,255,255,.65);outline:1px solid rgba(25,52,93,.12);box-shadow:0 24px 55px -30px rgba(25,51,93,.4);cursor:pointer;opacity:.55;transform:scale(.8);transition:opacity .45s ease,transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .45s ease}
+    #stories .cs3-card.on{opacity:1;transform:scale(1);box-shadow:0 60px 120px -36px rgba(15,32,64,.55),0 24px 48px -24px rgba(15,32,64,.35),0 2px 8px rgba(15,32,64,.12)}
+    #stories .cs3-card:focus-visible{outline:2px solid #DE6E30;outline-offset:3px}
+    #stories .cs3-card img{width:100%;height:100%;object-fit:cover;display:block}
+    #stories .cs3-card iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    #stories .cs3-pb{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) scale(.9);width:72px;height:72px;border-radius:50%;background:rgba(255,255,255,.94);backdrop-filter:blur(4px);display:grid;place-items:center;box-shadow:0 18px 44px rgba(15,32,64,.45),0 0 0 10px rgba(255,255,255,.18);opacity:0;pointer-events:none;transition:opacity .25s ease,transform .25s ease,box-shadow .25s ease}
+    #stories .cs3-pb svg{width:26px;height:26px;color:#19335D;margin-left:3px}
+    #stories .cs3-card.on:hover .cs3-pb{opacity:1;transform:translate(-50%,-50%) scale(1)}
+    #stories .cs3-card.on:hover:active .cs3-pb{transform:translate(-50%,-50%) scale(1.08);box-shadow:0 22px 52px rgba(15,32,64,.5),0 0 0 14px rgba(255,255,255,.22)}
+    @media(hover:none){#stories .cs3-card.on .cs3-pb{opacity:1;transform:translate(-50%,-50%) scale(1)}}/* touch screens have no cursor - the active card keeps its badge */
+    #stories .cs3-card.playing .cs3-pb{display:none}
+    /* arrows - quiet, light */
+    #stories .cs3-arw{position:absolute;top:calc(50% - 22px);z-index:5;width:44px;height:44px;border-radius:50%;border:1px solid rgba(25,51,93,.14);cursor:pointer;display:grid;place-items:center;background:#fff;color:#19335D;box-shadow:0 12px 28px -12px rgba(25,51,93,.35);transition:transform .2s,background .2s,color .2s}
+    #stories .cs3-arw svg{width:18px;height:18px}
+    #stories .cs3-arw:hover{background:#DE6E30;color:#fff;transform:scale(1.07)}
+    #stories .cs3-arw--l{left:clamp(70px,6vw,96px)}/* clears the fixed contents launcher */
+    #stories .cs3-arw--r{right:clamp(70px,6vw,96px)}
+    /* caption under the stage: quote + name left, play pill right */
+    #stories .cs3-cap{max-width:min(880px,64vw);margin:clamp(18px,2.4vw,26px) auto 0;padding:0 6px;display:flex;align-items:flex-start;justify-content:space-between;gap:clamp(18px,3vw,46px);transition:opacity .3s ease}
+    #stories .cs3-cap.fade{opacity:0}
+    #stories .cs3-q{margin:0 0 10px;color:#5A6B85;font-size:13px;line-height:1.7;max-width:62ch}
+    #stories .cs3-n{margin:0;color:#19335D;font-size:12.5px}
+    #stories .cs3-n b{font-weight:700}
+    /* speaker's logo - optional per card, see data-logo on the cards below */
+    #stories .cs3-who{display:flex;align-items:center;gap:12px}
+    #stories .cs3-logo{flex:none;width:46px;height:46px;object-fit:contain;background:#fff;border:1px solid rgba(25,51,93,.12);border-radius:12px;padding:5px;box-shadow:0 8px 18px -12px rgba(25,51,93,.45)}
+    #stories .cs3-logo[hidden]{display:none}/* beats the global img{display:block} */
+    #stories .cs3-playbtn{flex:none;display:inline-flex;align-items:center;gap:9px;border:0;cursor:pointer;background:#19335D;color:#fff;font:700 13px/1 'Inter',system-ui,sans-serif;padding:13px 22px;border-radius:999px;box-shadow:0 14px 30px -12px rgba(25,51,93,.55);transition:background .2s,transform .2s}
+    #stories .cs3-playbtn:hover{background:#DE6E30;transform:translateY(-2px)}
+    #stories .cs3-playbtn svg{width:13px;height:13px}
+    #stories .cs3-more{text-align:center;margin-top:clamp(22px,3vw,32px)}
+    #stories .cs3-more a{display:inline-flex;align-items:center;gap:8px;color:#19335D;font-weight:700;font-size:14px;text-decoration:none;border-bottom:2px solid rgba(222,110,48,.4);padding-bottom:3px;transition:color .2s,border-color .2s}
+    #stories .cs3-more a:hover{color:#DE6E30;border-color:#DE6E30}
+    @media(max-width:820px){
+      #stories .cs3-rail{--wc:86vw}
+      #stories .cs3-arw{display:none}
+      #stories .cs3-cap{max-width:86vw;flex-direction:column;gap:14px}
+      #stories .cs3-playbtn{align-self:flex-start}
+    }
+  </style>
+  <div class="cs3-head">
+    <h2 class="cs3-title" id="stories-title">What Our Clients Are Saying</h2>
+  </div>
+
+  <div class="cs3-zone">
+    <button type="button" class="cs3-arw cs3-arw--l" aria-label="Previous story"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+    <button type="button" class="cs3-arw cs3-arw--r" aria-label="Next story"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+    <div class="cs3-rail" role="list" aria-label="Customer stories">
+
+      <article class="cs3-card" role="listitem" data-yt="3SHgLf1GFgk" data-logo="https://www.extraaedge.com/wp-content/uploads/2026/all-institues-logo/higher%20education/tula-s-institute-dehradun-logo.svg" data-q="&ldquo;Tula's Institute streamlined its admissions process, strengthened student engagement, and empowered its team with a more organised admissions workflow.&rdquo;" data-n="Silky Jain Marwah" data-r="Executive Director at Tula's Institute, Dehradun" tabindex="0" aria-label="Customer story: Silky Jain Marwah">
+        <img src="https://img.youtube.com/vi/3SHgLf1GFgk/maxresdefault.jpg" alt="Silky Jain Marwah - ExtraaEdge customer story" loading="lazy" decoding="async"
+             onerror="this.onerror=null;this.src='https://img.youtube.com/vi/3SHgLf1GFgk/hqdefault.jpg'">
+        <span class="cs3-pb" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+      </article>
+
+      <article class="cs3-card" role="listitem" data-yt="dWLdQ8E3FOU" data-logo="" data-q="&ldquo;A unified admissions platform helped the team manage enquiries, improve follow-ups, and build a more efficient applicant journey.&rdquo;" data-n="Pranay Rupani" data-r="Head of Admissions &amp; Marketing at Annapurna College of Film &amp; Media" tabindex="0" aria-label="Customer story: Pranay Rupani">
+        <img src="https://img.youtube.com/vi/dWLdQ8E3FOU/maxresdefault.jpg" alt="Pranay Rupani - ExtraaEdge customer story" loading="lazy" decoding="async"
+             onerror="this.onerror=null;this.src='https://img.youtube.com/vi/dWLdQ8E3FOU/hqdefault.jpg'">
+        <span class="cs3-pb" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+      </article>
+
+      <article class="cs3-card" role="listitem" data-yt="yfK83D2SKps" data-logo="https://www.extraaedge.com/wp-content/uploads/2026/all-institues-logo/higher%20education/indian-academy-degree-college-logo.svg" data-q="&ldquo;Simplified lead management and communication, with better counsellor visibility across the student admissions journey.&rdquo;" data-n="K. Nirmala Devi" data-r="Assistant Manager at Indian Academy Group, Bengaluru" tabindex="0" aria-label="Customer story: K. Nirmala Devi">
+        <img src="https://img.youtube.com/vi/yfK83D2SKps/maxresdefault.jpg" alt="K. Nirmala Devi - ExtraaEdge customer story" loading="lazy" decoding="async"
+             onerror="this.onerror=null;this.src='https://img.youtube.com/vi/yfK83D2SKps/hqdefault.jpg'">
+        <span class="cs3-pb" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+      </article>
+
+      <article class="cs3-card" role="listitem" data-yt="tLExH5jpQbw" data-logo="https://www.extraaedge.com/wp-content/uploads/2026/all-institues-logo/higher%20education/uttaranchal-university-logo.svg" data-q="&ldquo;Streamlined enquiry handling, faster follow-ups and clearer visibility across the entire admission funnel.&rdquo;" data-n="Uttaranchal University" data-r="University &middot; Dehradun" tabindex="0" aria-label="Customer story: Uttaranchal University">
+        <img src="https://img.youtube.com/vi/tLExH5jpQbw/maxresdefault.jpg" alt="Uttaranchal University - ExtraaEdge customer story" loading="lazy" decoding="async"
+             onerror="this.onerror=null;this.src='https://img.youtube.com/vi/tLExH5jpQbw/hqdefault.jpg'">
+        <span class="cs3-pb" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+      </article>
+
+      <article class="cs3-card" role="listitem" data-yt="9l99MjTfEbw" data-logo="" data-q="&ldquo;One platform for leads, counsellors and communication across the group&rsquo;s campuses.&rdquo;" data-n="Amrapali Group of Institutes" data-r="Group of Institutes &middot; Haldwani" tabindex="0" aria-label="Customer story: Amrapali Group of Institutes">
+        <img src="https://img.youtube.com/vi/9l99MjTfEbw/maxresdefault.jpg" alt="Amrapali Group of Institutes - ExtraaEdge customer story" loading="lazy" decoding="async"
+             onerror="this.onerror=null;this.src='https://img.youtube.com/vi/9l99MjTfEbw/hqdefault.jpg'">
+        <span class="cs3-pb" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+      </article>
+
+      <article class="cs3-card" role="listitem" data-yt="7sPbL3uvha0" data-logo="" data-q="&ldquo;ExtraaEdge CRM helped the team hit its admissions target for the cycle.&rdquo;" data-n="DPU Global Business School" data-r="B-School &middot; Pune" tabindex="0" aria-label="Customer story: DPU Global Business School">
+        <img src="https://img.youtube.com/vi/7sPbL3uvha0/maxresdefault.jpg" alt="DPU Global Business School - ExtraaEdge customer story" loading="lazy" decoding="async"
+             onerror="this.onerror=null;this.src='https://img.youtube.com/vi/7sPbL3uvha0/hqdefault.jpg'">
+        <span class="cs3-pb" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+      </article>
+
+      <article class="cs3-card" role="listitem" data-yt="KisEkYkGYs8" data-logo="" data-q="&ldquo;The team adopted ExtraaEdge CRM in just 10 days and brought its counselling pipeline into one organised view.&rdquo;" data-n="Admit Abroad" data-r="Study Abroad Consultants" tabindex="0" aria-label="Customer story: Admit Abroad">
+        <img src="https://img.youtube.com/vi/KisEkYkGYs8/maxresdefault.jpg" alt="Admit Abroad - ExtraaEdge customer story" loading="lazy" decoding="async"
+             onerror="this.onerror=null;this.src='https://img.youtube.com/vi/KisEkYkGYs8/hqdefault.jpg'">
+        <span class="cs3-pb" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+      </article>
+
+      <article class="cs3-card" role="listitem" data-yt="q53VDQFTq04" data-logo="https://www.extraaedge.com/wp-content/uploads/2026/all-institues-logo/edtech/fostiima-business-school-logo.svg" data-q="&ldquo;From first enquiry to final PGDM enrolment - the full admission journey on one platform.&rdquo;" data-n="FOSTIIMA Business School" data-r="B-School &middot; New Delhi" tabindex="0" aria-label="Customer story: FOSTIIMA Business School">
+        <img src="https://img.youtube.com/vi/q53VDQFTq04/maxresdefault.jpg" alt="FOSTIIMA Business School - ExtraaEdge customer story" loading="lazy" decoding="async"
+             onerror="this.onerror=null;this.src='https://img.youtube.com/vi/q53VDQFTq04/hqdefault.jpg'">
+        <span class="cs3-pb" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+      </article>
+
+      <article class="cs3-card" role="listitem" data-yt="ApP0hhJ45NQ" data-logo="" data-q="&ldquo;Structure and speed for the admission journey, with organised leads and timely follow-ups.&rdquo;" data-n="IBSC" data-r="Institute of Management" tabindex="0" aria-label="Customer story: IBSC">
+        <img src="https://img.youtube.com/vi/ApP0hhJ45NQ/maxresdefault.jpg" alt="IBSC - ExtraaEdge customer story" loading="lazy" decoding="async"
+             onerror="this.onerror=null;this.src='https://img.youtube.com/vi/ApP0hhJ45NQ/hqdefault.jpg'">
+        <span class="cs3-pb" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+      </article>
+
+      <article class="cs3-card" role="listitem" data-yt="K3kqAHKJAgo" data-logo="" data-q="&ldquo;One place to manage enquiries, follow-ups and admissions for the whole team.&rdquo;" data-n="IIFT" data-r="Institute of Management" tabindex="0" aria-label="Customer story: IIFT">
+        <img src="https://img.youtube.com/vi/K3kqAHKJAgo/maxresdefault.jpg" alt="IIFT - ExtraaEdge customer story" loading="lazy" decoding="async"
+             onerror="this.onerror=null;this.src='https://img.youtube.com/vi/K3kqAHKJAgo/hqdefault.jpg'">
+        <span class="cs3-pb" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+      </article>
+
+    </div>
+  </div>
+
+  <div class="cs3-cap" id="cs3Cap" aria-live="polite">
+    <div>
+      <p class="cs3-q" id="cs3Q"></p>
+      <div class="cs3-who">
+        <img class="cs3-logo" id="cs3Logo" src="" alt="" width="46" height="46" decoding="async" hidden>
+        <p class="cs3-n" id="cs3N"></p>
+      </div>
+    </div>
+    <button type="button" class="cs3-playbtn" id="cs3Play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg> Play customer story</button>
+  </div>
+
+  <div class="cs3-more">
+    <a href="/videos/customer-stories/">View All Customer Stories &rarr;</a>
+  </div>
+</section>
+</div>
+</main>
+
+<!-- ── shared page scripts (verbatim from the original homepage) ── -->
+<script id="ee-site-zoom-js">
+    (function () {
+        function eeApplyZoom() {
+            if (document.body) {
+                document.body.style.setProperty('zoom', '0.9', 'important');
+            }
+        }
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', eeApplyZoom);
+        } else {
+            eeApplyZoom();
+        }
+    })();
+    </script>
+<script>
+        // Render Lucide icons (retry if not loaded yet)
+        function renderIcons(){
+            if (window.lucide && typeof window.lucide.createIcons === 'function') {
+                window.lucide.createIcons();
+            } else {
+                setTimeout(renderIcons, 100);
+            }
+        }
+        renderIcons();
+
+        /* ── Header scroll-shadow effect + auto-hide on scroll down ──
+           On single blog posts the visitor wants maximum reading room,
+           so the header slides up when scrolling DOWN past the hero
+           and slides back into view the moment they scroll UP. Other
+           page types keep the header sticky (just adds the scroll
+           shadow). */
+        (function(){
+            var hdr = document.getElementById('site-header');
+            if (!hdr) return;
+            var isPost   = document.body.classList.contains('single-post') ||
+                           document.body.classList.contains('single-industry') ||
+                           document.body.classList.contains('single-use_case') ||
+                           document.body.classList.contains('ee-singular') &&
+                           document.body.classList.contains('single');
+            var lastY    = window.scrollY || 0;
+            var ticking  = false;
+            function onScroll(){
+                var y = window.scrollY || 0;
+                hdr.classList.toggle('scrolled', y > 50);
+                /* Auto-hide only on long-form post pages where the
+                   reader actively wants more room. */
+                if (isPost) {
+                    var goingDown = y > lastY;
+                    var pastHero  = y > 240;
+                    if (goingDown && pastHero) {
+                        hdr.classList.add('eh-hidden');
+                    } else {
+                        hdr.classList.remove('eh-hidden');
+                    }
+                }
+                lastY = y;
+                ticking = false;
+            }
+            window.addEventListener('scroll', function(){
+                if (!ticking) { requestAnimationFrame(onScroll); ticking = true; }
+            }, { passive: true });
+        })();
+
+        // Mobile Menu Toggle
+        const openBtn = document.getElementById('openMobileBtn');
+        const closeBtn = document.getElementById('closeMobileBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        if (openBtn) openBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            openBtn.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+        });
+
+        if (closeBtn) closeBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            if (openBtn) openBtn.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Mobile Accordion Logic
+        function toggleAccordion(btn) {
+            const item = btn.parentElement;
+            const wasActive = item.classList.contains('active');
+            document.querySelectorAll('.mobile-accordion-item').forEach(el => {
+                if (el !== item) {
+                    el.classList.remove('active');
+                    const b = el.querySelector('button[aria-expanded]'); if (b) b.setAttribute('aria-expanded', 'false');
+                }
+            });
+            item.classList.toggle('active');
+            btn.setAttribute('aria-expanded', wasActive ? 'false' : 'true');
+        }
+
+        // Reveal animations on load
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.reveal').forEach((el, i) => {
+                setTimeout(() => el.classList.add('active'), i * 150);
+            });
+        });
+
+        // Scroll Progress Bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+            const progressEl = document.getElementById('progress');
+            if (progressEl) {
+                progressEl.style.width = scrolled + '%';
+                progressEl.setAttribute('aria-valuenow', Math.round(scrolled));
+            }
+        });
+
+        // ───────── Sticky-fail guard ─────────
+        // If some page-level CSS (typically `overflow:hidden` on an ancestor or
+        // a transform on <body>) silently kills position:sticky, the header
+        // visually disappears after the first scroll. We detect that and
+        // promote the header to position:fixed so it stays usable.
+        (function(){
+            const header = document.getElementById('site-header');
+            if (!header) return;
+
+            // Measure once so the body padding shim fills the gap when fixed
+            function setHeaderHeightVar() {
+                document.documentElement.style.setProperty('--ee-header-h', header.offsetHeight + 'px');
+            }
+            setHeaderHeightVar();
+            window.addEventListener('resize', setHeaderHeightVar);
+
+            let lastTop = null;
+            function check() {
+                const rect = header.getBoundingClientRect();
+                // Sticky behaviour means top stays at 0 when scrolled. If we
+                // see top < 0 the header has scrolled away — sticky is broken.
+                if (rect.top < -2 && !header.classList.contains('ee-force-fixed')) {
+                    header.classList.add('ee-force-fixed');
+                    document.body.classList.add('ee-header-fixed');
+                    setHeaderHeightVar();
+                }
+                lastTop = rect.top;
+            }
+            // Initial check after layout settles
+            requestAnimationFrame(check);
+            window.addEventListener('scroll', check, { passive: true });
+        })();
+    </script>
+<script>
+/* honour reduced-motion / low-power devices */
+var RM = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* progress bar removed - #ee-progress (global, rAF-driven) is the single scroll progress indicator */
+
+/* reveal */
+var rvObs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');rvObs.unobserve(e.target);}});},{threshold:0,rootMargin:'0px 0px -8%'});
+document.querySelectorAll('.rv').forEach(function(el){rvObs.observe(el);});
+
+/* (hero typewriter removed - now handled by the scoped #xhero hero script) */
+
+/* counters */
+function animate(el){var t=parseFloat(el.dataset.count),pre=el.dataset.prefix||'',suf=el.dataset.suffix||'';var dec=t%1!==0,cur=0,steps=46,inc=t/steps;var id=setInterval(function(){cur+=inc;if(cur>=t){cur=t;clearInterval(id);}el.textContent=pre+(dec?cur.toFixed(1):Math.round(cur).toLocaleString())+suf;},26);}
+var cObs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){animate(e.target);cObs.unobserve(e.target);}});},{threshold:.6});
+document.querySelectorAll('[data-count]').forEach(function(el){cObs.observe(el);});
+
+/* (hero live flow removed - replaced by the scoped #xhero VidyaAI console simulation) */
+
+/* marquee is now a static centered grid - logos shown once, no duplication/scroll */
+
+/* ============ Counsellor streaming dashboard ============ */
+(function(){
+  var bars=document.getElementById('bars');
+  if(bars){var bi=[].slice.call(bars.children);(function r(){bi.forEach(function(b){b.style.height=(28+Math.random()*62)+'%';});setTimeout(r,1600);})();}
+  /* streaming sparkline */
+  var cv=document.getElementById('spark');
+  if(cv){var ctx=cv.getContext('2d');var data=[];for(var i=0;i<60;i++)data.push(40+Math.random()*40);
+    function rs(){cv.width=cv.clientWidth;cv.height=56;}rs();addEventListener('resize',rs);
+    setInterval(function(){data.push(35+Math.random()*55);data.shift();},220);
+    (function draw(){var w=cv.width,h=cv.height;ctx.clearRect(0,0,w,h);
+      var g=ctx.createLinearGradient(0,0,w,0);g.addColorStop(0,'#DE6E30');g.addColorStop(1,'#19345d');
+      ctx.beginPath();data.forEach(function(v,i){var x=i/(data.length-1)*w,y=h-(v/100)*h;i?ctx.lineTo(x,y):ctx.moveTo(x,y);});
+      ctx.strokeStyle=g;ctx.lineWidth=2;ctx.stroke();ctx.lineTo(w,h);ctx.lineTo(0,h);ctx.closePath();
+      var f=ctx.createLinearGradient(0,0,0,h);f.addColorStop(0,'rgba(222,110,48,.22)');f.addColorStop(1,'rgba(222,110,48,0)');ctx.fillStyle=f;ctx.fill();
+      if(!RM)requestAnimationFrame(draw);})();
+  }
+  /* morphing KPI views */
+  var views=[{t:'· TODAY',conv:'+12%',rt:'58s',clo:'9.2x'},{t:'· THIS WEEK',conv:'+19%',rt:'1.1m',clo:'7.8x'},{t:'· THIS CYCLE',conv:'+40%',rt:'1.4m',clo:'9.2x'}];
+  var v=0,tag=document.getElementById('viewTag'),kc=document.getElementById('kConv'),kr=document.getElementById('kRt'),kl=document.getElementById('kClo');
+  if(tag&&kc&&kr&&kl){ setInterval(function(){v=(v+1)%views.length;var d=views[v];tag.textContent=d.t;kc.textContent=d.conv;kr.textContent=d.rt;kl.textContent=d.clo;},2600); }
+})();
+
+
+
+/* ============ Self-typing chats ============ */
+function runChat(bodyId,script){
+  var body=document.getElementById(bodyId);if(!body)return;var i=0;
+  function push(m){var d=document.createElement('div');d.className='cmsg cmsg--'+(m.who==='u'?'u':m.who==='sys'?'sys':'a');d.innerHTML=m.text;body.appendChild(d);body.scrollTop=body.scrollHeight;i++;}
+  function next(){if(i>=script.length)return;var m=script[i];
+    if(m.who==='a'){var t=document.createElement('div');t.className='ctyping';t.innerHTML='<i></i><i></i><i></i>';body.appendChild(t);body.scrollTop=body.scrollHeight;setTimeout(function(){t.remove();push(m);setTimeout(next,650);},950);}
+    else if(m.who==='sys'){push(m);setTimeout(next,500);}else{push(m);setTimeout(next,700);}}
+  var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){next();obs.disconnect();}});},{threshold:.4});
+  obs.observe(body);
+}
+
+/* ============ Live system-feed counter ============ */
+(function(){
+  var el=document.getElementById('amsToday');if(!el||RM)return;
+  var started=false;var sec=el.closest('section');
+  var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&!started){started=true;
+    setInterval(function(){if(Math.random()>0.4){el.textContent=(parseInt(el.textContent,10)+1);}},3200);o.disconnect();}});},{threshold:.2});
+  if(sec)o.observe(sec);
+})();
+
+
+
+/* ============ FAQ accordion ============ */
+document.querySelectorAll('.qa button').forEach(function(b){
+  b.addEventListener('click',function(){var qa=b.parentElement,a=qa.querySelector('.qa__a'),open=qa.classList.contains('open');
+    document.querySelectorAll('.qa').forEach(function(x){x.classList.remove('open');x.querySelector('.qa__a').style.maxHeight=null;x.querySelector('button').setAttribute('aria-expanded','false');});
+    if(!open){qa.classList.add('open');a.style.maxHeight=a.scrollHeight+'px';b.setAttribute('aria-expanded','true');}});
+});
+
+
+
+/* The integrations explorer (category tabs + rotating grid) is gone - the
+   section is a single hub board now, and its connector script lives with the
+   markup. */
+
+
+
+
+/* ============ Lead-journey roadmap behind phone ============ */
+(function(){
+  var rm=document.getElementById('roadmap');if(!rm)return;
+  var nodes=rm.querySelectorAll('.rm-node'),prog=document.getElementById('rmProg');
+  var i=0,started=false;
+  function step(){
+    nodes.forEach(function(n,idx){n.classList.toggle('on',idx<=i);});
+    if(prog)prog.style.strokeDashoffset=(100-(i+1)*20);
+    i++;if(i>=nodes.length){setTimeout(function(){i=0;nodes.forEach(function(n){n.classList.remove('on');});if(prog)prog.style.strokeDashoffset=100;},900);}
+  }
+  var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&!started){started=true;step();setInterval(step,RM?4000:1600);o.disconnect();}});},{threshold:.2});
+  o.observe(rm);
+})();
+
+/* ============ Demo form - functional lead capture via WhatsApp ============ */
+(function(){
+  var f=document.getElementById('demoForm');if(!f)return;
+  function esc(s){return String(s).replace(/[<>&]/g,function(c){return{'<':'&lt;','>':'&gt;','&':'&amp;'}[c];});}
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!f.checkValidity()){f.reportValidity&&f.reportValidity();return;}
+    var el=f.querySelectorAll('input,select');
+    var name=el[0].value.trim(),inst=el[1].value.trim(),wa=el[2].value.trim(),email=el[3].value.trim(),vol=el[4].value;
+    var msg='Hi ExtraaEdge! I would like to book a free demo of your AI Admission CRM.%0A'+
+      '%0AName: '+encodeURIComponent(name)+'%0AInstitute: '+encodeURIComponent(inst)+
+      '%0AWhatsApp: '+encodeURIComponent(wa)+'%0AEmail: '+encodeURIComponent(email)+
+      '%0AMonthly enquiries: '+encodeURIComponent(vol);
+    var link='https://wa.me/918956982897?text='+msg;
+    var ok=document.getElementById('demoOk');
+    ok.innerHTML='🎉 Thanks '+esc(name.split(' ')[0]||'')+'! Your request is in - our admissions expert will reach out within the hour.'+
+      '<br><a href="'+link+'" target="_blank" rel="noopener" class="btn btn-dark" style="margin-top:14px">Confirm instantly on WhatsApp</a>';
+    f.style.display='none';ok.style.display='block';
+    ok.scrollIntoView({behavior:'smooth',block:'center'});
+  });
+})();
+
+
+
+/* (legacy duplicate WebGL hero loop removed - #xhero's scoped renderer owns the canvas and pauses off-screen) */
+</script>
+<script>
+/* Anchor-landing corrector: with content-visibility, sections render
+   just-in-time while a long smooth anchor-scroll is in flight, so estimated
+   heights can leave the jump a few hundred px off. Shortly after any hash
+   navigation, re-align the target once (instant, imperceptible). Armed only
+   around hash changes so normal scrolling is never touched. */
+(function(){
+  var armedUntil=0;
+  function check(){
+    if(Date.now()>armedUntil) return;
+    var h=location.hash; if(!h||h.length<2) return;
+    var el=document.getElementById(decodeURIComponent(h.slice(1))); if(!el) return;
+    var sm=parseFloat(getComputedStyle(el).scrollMarginTop)||0;
+    var top=el.getBoundingClientRect().top;
+    if(Math.abs(top-sm)>12){
+      window.scrollTo({top:Math.round(window.pageYOffset+top-sm),left:0,behavior:'instant'});
+    }
+  }
+  function arm(){ armedUntil=Date.now()+2400; setTimeout(check,700); setTimeout(check,1500); setTimeout(check,2300); }
+  window.addEventListener('hashchange',arm);
+  if(location.hash){ (document.readyState==='complete') ? arm() : window.addEventListener('load',arm); }
+})();
+</script>
+</body>
+</html>
